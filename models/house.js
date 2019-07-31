@@ -1,7 +1,8 @@
 var mongoose = require("mongoose");
 
 var HouseSchema = new mongoose.Schema({
-    Location: { type: String, unique:true, require:true},
+    location: { type: String, unique:true, require:true},
+    onMarket: Bool,
     description: String,
     createdDate: { type: Date, default: Date.now },
     author: {
