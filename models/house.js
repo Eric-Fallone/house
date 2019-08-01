@@ -1,8 +1,9 @@
 var mongoose = require("mongoose");
 
 var HouseSchema = new mongoose.Schema({
-    location: { type: String, unique:true, require:true},
-    onMarket: Boolean,
+    address: { type: String, unique:true, require:true},
+    onMarket: String,
+    isShowing: Boolean,
     description: String,
     createdDate: { type: Date, default: Date.now },
     author: {
@@ -11,7 +12,8 @@ var HouseSchema = new mongoose.Schema({
           ref: "User"
        },
        username: String
-    }
+    },
+    carousel:[]
 });
 
 module.exports = mongoose.model("House", HouseSchema);

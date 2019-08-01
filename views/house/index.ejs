@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+<div class="container">
+  <div class="row">
+      <h1 class="col-md-12 text-center"><%=houseInfo.address%></h1>
+      <h1 class="col-md-12 text-center">Is on the market: <%=houseInfo.onMarket%></h1>
+      <h1 class="col-md-12 text-center">Is showing: <%=houseInfo.isShowing%></h1>
+      <h1 class="col-md-12 text-center"><%=houseInfo.description%></h1>
+  </div>
+  <% if(currentUser && houseInfo.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+    <div class="pull-right">
+      <a class="btn btn-warning" href="/blog/<%= houseInfo.catagory %>/<%= houseInfo.title %>/edit">Edit</a>
+      <form class="delete-form" action="/blog/<%= houseInfo.title %>?_method=DELETE" method="houseInfo">
+        <button class="btn btn-xs btn-danger">DELETE</button>
+      </form>
+    </div>
+  <% } %>
+</div>
+<% include ../partials/footer %>

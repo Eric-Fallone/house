@@ -15,6 +15,7 @@ var express     = require("express"),
 require('dotenv').config();
 //routes
 var indexRoute = require("./routes/index"),
+    houseRoute = require("./routes/house"),
     adminRoute = require("./routes/admin");
 
 
@@ -63,7 +64,8 @@ app.use(function(req, res, next){
 });
 
 app.use("/",indexRoute);
-app.use("/",adminRoute);
+app.use("/admin",adminRoute);
+app.use("/NewHome",houseRoute);
 
 var port = normalizePort(process.env.PORT || '3000');
 
