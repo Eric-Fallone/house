@@ -2,15 +2,59 @@ var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
     methodOverride = require("method-override"),
+    mongoose    = require("mongoose"),
+    passport    = require("passport"),
+    cookieParser = require("cookie-parser"),
+    LocalStrategy = require("passport-local"),
+    session = require("express-session"),
+    methodOverride = require("method-override"),
+    User        = require("./models/user"),
+    House        = require("./models/house"),
     normalizePort=require('normalize-port');
 
+require('dotenv').config();
 //routes
 var indexRoute = require("./routes/index");
+
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(process.env.MONGOOSE_URL, {
+  useNewUrlParser: true,
+  useCreateIndex: true
+}).then(()=> {
+  console.log('Connecected to DB');
+}).catch(err => {
+  console.log("ERROR",err.message);
+});
+
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
+app.use(cookieParser('secret'));
+
+//require moment
+app.locals.moment = require('moment');
+
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: process.env.PASSPORT_SECRET,
+    resave: true,
+    rolling: true,
+    saveUninitialized: false,
+    cookie: {
+      secure: false,
+      maxAge: 3600000 //1 hour
+    }
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.use("/",indexRoute);
 
