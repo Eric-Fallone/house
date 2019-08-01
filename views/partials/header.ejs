@@ -35,6 +35,15 @@
             <li class="nav-item">
               <a class="nav-link" href="/Contact">Contact</a>
             </li>
+            <% if( currentUser && currentUser.isAdmin ===true ) { %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/admin/masterchat">Test One</a>
+                  <a class="dropdown-item" href="/admin/newblog">Test Two</a>
+                </div>
+              </li>
+          <% } %>
           </ul>
         </div>
       </nav>

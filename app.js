@@ -14,7 +14,8 @@ var express     = require("express"),
 
 require('dotenv').config();
 //routes
-var indexRoute = require("./routes/index");
+var indexRoute = require("./routes/index"),
+    adminRoute = require("./routes/admin");
 
 
 mongoose.Promise = global.Promise;
@@ -56,7 +57,13 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   next();
+});
+
 app.use("/",indexRoute);
+app.use("/",adminRoute);
 
 var port = normalizePort(process.env.PORT || '3000');
 
