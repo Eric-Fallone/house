@@ -7,16 +7,14 @@ var { isLoggedIn, isAdmin} = middleware;
 
 //index
 router.get("/:address", function(req, res){
-  console.log("did I get here?");
-  House.findOne({address: "test"}), function(err,houseObject){
+  House.findOne({address:req.params.address},function(err, houseObject){
     if(err){
       console.log(err);
-      res.redirect("/")
     } else{
-      console.log("what about here?");
-      res.render("house/index");
+      console.log(houseObject);
+      res.render("house/index",{listingInfo: houseObject});
     }
-  };
+  });
 });
 
 
@@ -68,7 +66,7 @@ router.post("/house", isLoggedIn, isAdmin, function(req, res){
         console.log(err);
         res.redirect('back')
       }else{
-        res.render("Landing")
+        res.redirect('/NewHome/'+newlycreated.address);
       }
     });
 
