@@ -26,3 +26,12 @@ a.nav-link{
 .carousel-caption {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+
+.carousel-indicators{
+  position:relative;
+}
+
+.carousel-indicators > li {
+  width: 100px;
+}
