@@ -7,7 +7,7 @@
       <h1 class="col-md-12 text-center">Is showing on website: <%=listingInfo.isShowing%></h1>
       <h1 class="col-md-12 text-center"><%=listingInfo.description%></h1>
   </div>
-  <% if(currentUser && houseInfo.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+  <% if( currentUser && currentUser.isAdmin){ %>
     <div class="pull-right">
       <a class="btn btn-warning" href="/blog/<%= houseInfo.catagory %>/<%= houseInfo.title %>/edit">Edit</a>
       <form class="delete-form" action="/blog/<%= houseInfo.title %>?_method=DELETE" method="houseInfo">
