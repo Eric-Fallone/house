@@ -21,7 +21,7 @@ router.post("/login", passport.authenticate("local",
 
 //Register show
 router.get("/register", function(req,res){
-  res.render("register");
+  res.render("Register");
 });
 //Register create - (login authenticate)
 router.post("/register",function(req,res){
@@ -30,7 +30,7 @@ router.post("/register",function(req,res){
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
-            return res.render("register", {error: err.message});
+            return res.render("Register", {error: err.message});
         }
         passport.authenticate("local")(req, res, function(){
           res.redirect("/");
