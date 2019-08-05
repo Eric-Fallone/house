@@ -65,7 +65,7 @@ app.use(function(req, res, next){
 
 app.use("/",indexRoute);
 app.use("/admin",adminRoute);
-app.use("/NewHome",houseRoute);
+app.use("/",houseRoute);
 
 var port = normalizePort(process.env.PORT || '3000');
 
