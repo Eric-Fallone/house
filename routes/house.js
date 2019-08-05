@@ -66,12 +66,11 @@ router.post("/house", isLoggedIn, isAdmin, function(req, res){
         console.log(err);
         res.redirect('back')
       }else{
-        res.redirect('/NewHome/'+newlycreated.address);
+        res.redirect('/'+newlycreated.address);
       }
     });
 
 });
-
 
 //edit
 router.get("/:catagory/:title/edit",isLoggedIn, isAdmin, function(req, res){
