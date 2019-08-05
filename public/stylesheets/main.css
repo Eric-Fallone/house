@@ -9,14 +9,20 @@ html,body{
 }
 
 .bodycontainer{
-  max-width: 720px;
+  max-width: 1020px;
   padding-top: 15px;
+
 }
 .navbar{
    box-shadow: 0 8px 6px -6px black;
 }
 a.nav-link{
   font-size: 36px;
+}
+
+.nav-img{
+    width: 224px;
+    height: 125px;
 }
 
 .footer{
@@ -34,4 +40,69 @@ a.nav-link{
 
 .carousel-indicators > li {
   width: 100px;
+}
+
+.wrapper {
+        background:#EFEFEF;
+        box-shadow: 1px 1px 10px #999;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom: 20px !important;
+        width: 800px;
+        padding-top: 5px;
+    }
+.scrolls {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 620px;
+    white-space:nowrap
+}
+.imageDiv img {
+    box-shadow: 1px 1px 10px #999;
+    margin: 2px;
+    max-height: 50px;
+    cursor: pointer;
+    display:inline-block;
+    *display:inline;
+    *zoom:1;
+    vertical-align:top;
+}
+.overflow_horizontal{
+  display:inline-block;
+  *display:inline;
+  *zoom:1;
+  vertical-align:top;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.wrapper{
+  position:fixed;
+  left: 0px;
+  width: 100vw;
+}
+
+.img_house{
+  height: 480px;
+}
+
+.address-street{
+  font-size: 42px;
+}
+
+.address-town{
+  font-size: 28px;
+}
+
+.availability{
+  font-size: 42px;
+  color: red;
+}
+
+.cost{
+  font-size: 28px;
+  color: red;
 }
