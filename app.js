@@ -63,9 +63,9 @@ app.use(function(req, res, next){
    next();
 });
 
-app.use("/",indexRoute);
 app.use("/admin",adminRoute);
-app.use("/",houseRoute);
+app.use("/listing",houseRoute);
+app.use("/",indexRoute);
 
 var port = normalizePort(process.env.PORT || '3000');
 

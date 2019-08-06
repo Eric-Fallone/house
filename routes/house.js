@@ -11,12 +11,10 @@ router.get("/:address", function(req, res){
     if(err){
       console.log(err);
     } else{
-      console.log(houseObject);
       res.render("house/index",{listingInfo: houseObject});
     }
   });
 });
-
 
 //new
 router.get("/house/new",isLoggedIn, isAdmin, function(req,res){
