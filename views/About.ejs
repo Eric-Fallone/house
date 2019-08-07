@@ -5,5 +5,43 @@ finilize styling once u finish design<br/>
 
 we need to agree on picture sizes for the carousel
 
+div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav boarder-top-bottom nav-text-bottom">
+    <li class="nav-item nav-active">
+      <a class="nav-link" href="/">Home </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/About">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Gallery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/Contact">Contact</a>
+    </li>
+    <% if( currentUser && currentUser.isAdmin ===true ) { %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/house/new">AddHouse</a>
+        </div>
+      </li>
+  <% } %>
+  </ul>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="/">
+    <img class="nav-logo" src="/photos/Logo/FH logo 32px.png" alt="">
+  </a>
+
+  <nav class="navbar navbar-dark navbar-expand-md bg-success justify-content-between">
+    <div class="container-fluid">
+        <a href="/" class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25">Brand</a>
+    </div>
+</nav>
+
+
 
 <% include partials/footer %>

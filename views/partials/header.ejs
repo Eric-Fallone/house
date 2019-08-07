@@ -17,39 +17,43 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   </head>
   <body>
+    <!--  Nav bar for follone house logo centered -->
     <div class="" id="wrap">
-      <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <div class="container bodycontainer">
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav boarder-top-bottom nav-text-bottom">
-              <li class="nav-item nav-active">
-                <a class="nav-link" href="/">Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/About">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/Contact">Contact</a>
-              </li>
-              <% if( currentUser && currentUser.isAdmin ===true ) { %>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/house/new">AddHouse</a>
-                  </div>
-                </li>
-            <% } %>
-            </ul>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="/">
-              <img class="nav-logo" src="/photos/Logo/FH logo 32px.png" alt="">
-            </a>
+      <nav class="navbar navbar-dark justify-content-between nav-logo-holder">
+        <div class="container-fluid">
+          <a class="navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25" href="/">
+            <img class=" nav-logo" src="/photos/Logo/FH logo 32px.png" alt="">
+          </a>
         </div>
       </nav>
+      <!--  Nav bar for follone quote -->
+      <div class="container justify-content-center">
+        <p class="text-center nav-quote-text">"Three generations of building better places to live"</p>
+      </div>
+      <!--  Nav bar for links-->
+      <nav class="navbar navbar-expand-md nav-subbar nav-link-holder">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="navbar-collapse collapse justify-content-center order-2 " id="collapsingNavbar">
+              <ul class="navbar-nav boarder-top-bottom">
+                  <li class="nav-item active">
+                      <a class="nav-link nav-text" href="#">Welcome </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-text" href="//codeply.com">Our Homes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-text" href="//codeply.com">About Fallone</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-text" href="//codeply.com">Photo Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-text" href="//codeply.com">Contact Us</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+
       <div class="container bodycontainer">

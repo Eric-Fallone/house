@@ -9,69 +9,69 @@ html,body{
 }
 
 .bodycontainer{
-  max-width: 980px;
+  max-width: 900px;
   padding-top: 15px;
 
 }
-.navbar{
-   box-shadow: 0 8px 6px -6px black;
-}
+
 a.nav-link{
   font-size: 18px;
 }
 
+.test{
+  margin: auto;
+}
+.nav-subbar{
+  background-color: #5e8776;
+  box-shadow: 0 8px 6px -6px black;
+}
 .nav-img{
     width: 224px;
     height: 125px;
 }
 .nav-logo{
   height: 125px;
+  width:221.484px;
 }
 .nav-active{
   color: white;
   background-color: #5e8776;
 }
-@media only screen and (min-width: 768px) {
-  .nav-logo{
-    position: relative;
-
-  }
-  .family-text{
-    position:relative;
-    bottom:10px;
-    right : 300px;
-    font-style: italic;
-    color:#5e8776;
-  }
-  .nav-text-bottom {
-      position:relative;
-      bottom:-30px;
-      right : 0px;
-  }
-  .navbar{
-    height: 150px;
-  }
-  .boarder-top-bottom{
-    border-top: 2px solid #5e8776;
-    border-bottom: 2.5px solid #5e8776;
-  }
-  .nav-item{
-  margin-left: 52px;
-  margin-right: 52px;
-  }
-
-}
 .nav-text{
-  position: absolute;
-  top:10px;
+  color: white;
 }
+.nav-text:hover{
+  color: black;
+}
+.nav-logo-holder{
+  padding-bottom:0;
+}
+.nav-quote-text{
+  font-style: italic;
+  color:#5e8776;
+  margin-bottom: 0px;
+}
+.nav-link-holder{
+  padding-top:0;
+  padding-bottom:3px;
+}
+.boarder-top-bottom{
+  border-top: 2px solid #5e8776;
+  border-bottom: 2.5px solid #5e8776;
+}
+.family-text{
+  bottom:10px;
+  right : 300px;
+  font-style: italic;
+  color:#5e8776;
+}
+
 .footer{
   height: 100px;
 }
 
 .carousel-inner{
   width: 873;
-  height: 673px;
 }
 
 .carousel-caption {
@@ -93,55 +93,7 @@ a.nav-link{
 }
 
 .carousel-item > img{
-height: 550px;
 border-radius: 5px;
-}
-
-.wrapper {
-        background:#EFEFEF;
-        box-shadow: 1px 1px 10px #999;
-        margin: auto;
-        text-align: center;
-        position: relative;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        margin-bottom: 20px !important;
-        width: 800px;
-        padding-top: 5px;
-    }
-.scrolls {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    height: 620px;
-    white-space:nowrap
-}
-.imageDiv img {
-    box-shadow: 1px 1px 10px #999;
-    margin: 2px;
-    max-height: 50px;
-    cursor: pointer;
-    display:inline-block;
-    *display:inline;
-    *zoom:1;
-    vertical-align:top;
-}
-.overflow_horizontal{
-  display:inline-block;
-  *display:inline;
-  *zoom:1;
-  vertical-align:top;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.wrapper{
-  position:fixed;
-  left: 0px;
-  width: 100vw;
-}
-
-.img_house{
-  height: 480px;
 }
 
 .address-street{
@@ -167,9 +119,6 @@ border-radius: 5px;
 
 
 
-.container {
-  padding: 10px 15px;
-}
 .skyblue {
 	background-color: #22c8ff;
 }
