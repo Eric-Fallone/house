@@ -30,13 +30,20 @@ a.nav-link{
     height: 125px;
 }
 .nav-logo{
-  height: 125px;
-  width:221.484px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:100%;
+
 }
 .nav-active{
-  color: white;
-  background-color: #5e8776;
+  background-color: white;
 }
+.nav-active > a{
+  color: black;
+  background-color: white;
+}
+
 .nav-text{
   color: white;
 }
