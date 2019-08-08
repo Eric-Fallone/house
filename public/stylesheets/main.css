@@ -1,3 +1,29 @@
+@media only screen and (max-width: 768px) {
+  .boarder-top-bottom{
+    border-top: 0px solid #5e8776;
+    border-bottom: 0px solid #5e8776;
+  }
+  .navbar-nav{
+    flex-direction: column;
+  }
+  .navbar-nav li:nth-child(6) {
+    order: 1;
+  }
+  .hidden-mobile{
+
+  }
+  .shown-mobile{
+
+  }
+}
+
+.hidden-mobile{
+
+}
+.shown-mobile{
+
+}
+
 html,body{
   height: 100%;
 }
@@ -21,20 +47,23 @@ a.nav-link{
 .nav-subbar{
   box-shadow: 0 8px 6px -6px black;
 }
+
 .nav-img{
     width: 224px;
     height: 125px;
 }
+
 .nav-logo{
   display: block;
   margin-left: auto;
   margin-right: auto;
   width:100%;
-
 }
+
 .nav-active{
   background-color: white;
 }
+
 .nav-active > a{
   color: black;
   background-color: white;
@@ -92,6 +121,14 @@ a.nav-link{
   padding-bottom: 4px;
   font-size: 12px;
 }
+@media only screen and (max-width: 990px) {
+  .nav-link-spacing{
+    margin-top: auto;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .footer{
   height: 100px;
 }
@@ -122,21 +159,54 @@ a.nav-link{
 border-radius: 5px;
 }
 
+.carousel-overlay{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  font-weight: bold;
+  width: auto;
+  display: none;
+}
+.overlay-helper:hover .carousel-overlay{
+  display: block;
+}
+.carousel-control-next:hover .carousel-overlay{
+  display: block;
+}
+
+
+.overlay-helper{
+  position: relative;
+
+}
+.overlay-left{
+  float: left;
+  padding-top: auto;
+  padding-bottom: auto;
+  margin-left: 30px;
+}
 .address-street{
-  font-size: 42px;
+  font-size: 14px;
 }
 
 .address-town{
-  font-size: 28px;
+  font-size: 42px;
+  font-weight: bold;
 }
 
 .availability{
   font-size: 42px;
   color: red;
+  font-weight: bold;
 }
 
 .cost{
-  font-size: 28px;
+  font-size: 42px;
+  font-weight: bold;
   color: red;
 }
 
