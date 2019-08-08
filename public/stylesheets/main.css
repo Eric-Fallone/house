@@ -9,7 +9,7 @@ html,body{
 }
 
 .bodycontainer{
-  max-width: 900px;
+  max-width: 980px;
   padding-top: 15px;
 
 }
@@ -18,11 +18,7 @@ a.nav-link{
   font-size: 18px;
 }
 
-.test{
-  margin: auto;
-}
 .nav-subbar{
-  background-color: #5e8776;
   box-shadow: 0 8px 6px -6px black;
 }
 .nav-img{
@@ -53,18 +49,31 @@ a.nav-link{
 .nav-logo-holder{
   padding-bottom:0;
 }
+.test{
+  position: relative;
+}
 .nav-quote-text{
+  position: absolute;
+  width: 360px;/*getit it on a single line*/
+  left: 30px;
+  top:40px;
   font-style: italic;
   color:#5e8776;
   margin-bottom: 0px;
+  /* hidden when too small?*/
 }
 .nav-link-holder{
-  padding-top:0;
   padding-bottom:3px;
 }
 .boarder-top-bottom{
   border-top: 2px solid #5e8776;
-  border-bottom: 2.5px solid #5e8776;
+  border-bottom: 2px solid #5e8776;
+}
+.boarder-top-bottom > li {
+  display: inline-flex;
+}
+.nav-inline{
+  display: inline-flex;
 }
 .family-text{
   bottom:10px;
@@ -72,7 +81,17 @@ a.nav-link{
   font-style: italic;
   color:#5e8776;
 }
-
+.nav-link-spacing{
+  margin-top: auto;
+  margin-bottom: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.nav-link-spacing > a{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 12px;
+}
 .footer{
   height: 100px;
 }
