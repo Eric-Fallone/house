@@ -41,10 +41,11 @@ html,body{
 }
 
 a.nav-link{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav-subbar{
+  background-color: rgba(235, 235, 235, 1);
   box-shadow: 0 8px 6px -6px black;
 }
 
@@ -61,12 +62,11 @@ a.nav-link{
 }
 
 .nav-active{
-  background-color: white;
+  background-color:rgba(75, 75, 75, 1);
 }
 
 .nav-active > a{
-  color: black;
-  background-color: white;
+  color: white !important;
 }
 
 .nav-text{
@@ -95,8 +95,8 @@ a.nav-link{
   padding-bottom:3px;
 }
 .boarder-top-bottom{
-  border-top: 2px solid #5e8776;
-  border-bottom: 2px solid #5e8776;
+  border-top: 2px solid rgba(75, 75, 75, 1);
+  border-bottom: 2px solid rgba(75, 75, 75, 1);
 }
 .boarder-top-bottom > li {
   display: inline-flex;
@@ -113,24 +113,20 @@ a.nav-link{
 .nav-link-spacing{
   margin-top: auto;
   margin-bottom: 10px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 .nav-link-spacing > a{
   padding-top: 4px;
   padding-bottom: 4px;
-  font-size: 12px;
 }
 @media only screen and (max-width: 990px) {
   .nav-link-spacing{
     margin-top: auto;
     margin-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
-}
-.footer{
-  height: 100px;
 }
 
 .carousel-inner{
@@ -155,8 +151,9 @@ a.nav-link{
   width: 100px;
 }
 
-.carousel-item > img{
+.overlay-helper > img{
 border-radius: 5px;
+box-shadow: 0px 8px 6px -6px #888;
 }
 
 .carousel-overlay{
@@ -165,8 +162,8 @@ border-radius: 5px;
   right: 0;
   left: 0;
   height: 50px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #FFFFFF;
+  background: rgba(210, 210, 210, 0.5);
+
   font-weight: bold;
   width: auto;
   display: none;
@@ -184,33 +181,63 @@ border-radius: 5px;
 
 }
 .overlay-left{
+  position: relative;
   float: left;
-  padding-top: auto;
-  padding-bottom: auto;
-  margin-left: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 80px;
 }
+
+.barlow{
+  font-family: 'Barlow', sans-serif;
+  color: #4B4B4B;
+  font-size: 16px;
+}
+
+.nunito{
+  font-family: 'Nunito', sans-serif;
+}
+
+
+
 .address-street{
-  font-size: 14px;
+  font-size: 18px;
+  padding-top: 10px;
 }
 
 .address-town{
-  font-size: 42px;
+  font-size: 38px;
   font-weight: bold;
 }
 
 .availability{
-  font-size: 42px;
+  font-size: 38px;
   color: red;
   font-weight: bold;
 }
 
 .cost{
-  font-size: 42px;
+  font-size: 38px;
   font-weight: bold;
   color: red;
 }
 
 
+
+
+
+
+.footer-style{
+  background-color: rgba(235, 235, 235, 1);
+  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;
+}
+
+
+.footer-div{
+  margin: 0;
+  padding: 0;
+  height: 40px;
+}
 
 
 
