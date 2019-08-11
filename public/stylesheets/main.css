@@ -46,10 +46,6 @@ html,body{
 
 }
 
-a.nav-link{
-  font-size: 16px;
-}
-
 .nav-subbar{
   background-color: rgba(235, 235, 235, 1);
   box-shadow: 0 8px 6px -6px black;
@@ -165,8 +161,6 @@ box-shadow: 0px 8px 6px -6px #888;
   left: 0;
   height: 50px;
   background: rgba(210, 210, 210, 0.5);
-
-  font-weight: bold;
   width: auto;
   display: none;
 }
@@ -190,6 +184,8 @@ box-shadow: 0px 8px 6px -6px #888;
   margin-left: 80px;
 }
 
+/*    fonts          */
+
 .barlow{
   font-family: 'Barlow', sans-serif;
   color: #4B4B4B;
@@ -199,8 +195,6 @@ box-shadow: 0px 8px 6px -6px #888;
 .nunito{
   font-family: 'Nunito', sans-serif;
 }
-
-
 
 .address-street{
   font-size: 18px;
@@ -224,12 +218,18 @@ box-shadow: 0px 8px 6px -6px #888;
   color: red;
 }
 
+a.nav-link{
+  font-size: 16px;
+}
 
+
+/*    fonts          */
+
+/*    footer          */
 .footer-style{
   background-color: rgba(235, 235, 235, 1);
   box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;
 }
-
 
 .footer-div{
   margin: 0;
@@ -237,75 +237,22 @@ box-shadow: 0px 8px 6px -6px #888;
   height: 40px;
 }
 
-
-
-
-.skyblue {
-	background-color: #22c8ff;
-}
-
-.carousel-indicators {
-	bottom: 0;
-}
-.carousel-control.right,
-.carousel-control.left {
-	background-image: none;
-}
-.carousel-item {
-	min-height: 350px;
-	height: 100%;
-	width:100%;
-}
-.carousel-caption h3,
-.carousel .icon-container,
-.carousel-caption button {
-	background-color: #09c;
-}
-.carousel-caption h3 {
-	padding: .5em;
-}
-.carousel .icon-container {
-	display: inline-block;
-	font-size: 25px;
-	line-height: 25px;
-	padding: 1em;
-	text-align: center;
-	border-radius: 50%;
-}
-.carousel-caption button {
-	border-color: #00bfff;
-	margin-top: 1em;
-}
-
-/* Animation delays */
-.carousel-caption h3:first-child {
-	animation-delay: 1s;
-}
-.carousel-caption h3:nth-child(2) {
-	animation-delay: 2s;
-}
-.carousel-caption button {
-	animation-delay: 3s;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.p {
-  padding-top: 125px;
-  text-align: center;
-}
-
-.p a {
-  text-decoration: underline;
-}
+/*    footer          */
 
 .align-bottom{
   bottom: 0%;
   line-height: 0px;
   background-color: red;
+}
+
+input[type="text"], #emailmsg {
+  background-color: rgba(226, 232, 232, 1) ;
+  border:1px solid rgba(133, 136, 131, 1);
+}
+
+button{
+  width: 100%;
+  color: white !important;
+  background-color: rgba(75, 75, 75, 1) !important;
+  border:1px solid rgba(133, 136, 131, 1) !important;
 }

@@ -1,74 +1,64 @@
 <% include partials/header %>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-      <!-- carousel code -->
-      <div id="carouselExampleIndicators" class="carousel slide">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner skyblue">
-
-          <!-- first slide -->
-          <div class="carousel-item active skyblue">
-            <div class="carousel-caption d-md-block">
-              <h3 data-animation="animated bounceInLeft">
-                This is the caption for slide 1
-              </h3>
-              <h3 data-animation="animated bounceInRight">
-                This is the caption for slide 1
-              </h3>
-              <button class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>
-            </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <img class="d-block w-100 img-fluid" src="/photos/Pictures/5sd/5sd front.jpg" alt="First slide">
+                  </div>
+                  <div class="col-12 pt-3 nunito">
+                    Phone: (908) 866-6628
+                  </div>
+                  <div class="col-12 nunito">
+                    Fax: (908) 866-6628
+                  </div>
+                  <div class="col-12 nunito">
+                    Address: 1131 Cambridge Lane,
+                  </div>
+                  <div class="col-12 nunito">
+                    Bridgewater, NJ 08807
+                  </div>
+                  <div class="col-12 nunito">
+                    ﻿Email: info@fallonehomes.com
+                  </div>
+                </div>
+              </div>
           </div>
+            <div class="col-sm-12 col-md-6">
+              <form action="/contact" method="post">
+              <div class="container">
+                <div class="row">
+                    <!--  Name -->
+                    <div class="col-6 nunito p-1 pt-4">
+                      <input class="form-control" id="first" type="text" placeholder="Name *" name ="name">
+                    </div>
+                    <!--Email-->
+                    <div class="col-6 nunito p-1 pt-4">
+                      <input class="form-control" id="last" type="text" placeholder="Email *" name ="email">
+                    </div>
+                    <!-- subject  -->
+                    <div class="col-12 nunito p-1 pt-2">
+                      <input class="form-control" id="subject" type="text" placeholder="Subject" name ="subject">
+                    </div>
 
-          <!-- second slide -->
-          <div class="carousel-item skyblue">
-            <div class="carousel-caption d-md-block">
-              <h3 class="icon-container" data-animation="animated bounceInDown">
-                <span class="fa fa-heart"></span>
-              </h3>
-              <h3 data-animation="animated bounceInUp">
-                This is the caption for slide 2
-              </h3>
-              <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>
-            </div>
-          </div>
+                    <!-- Email msg -->
 
-          <!-- third slide -->
-          <div class="carousel-item skyblue">
-            <div class="carousel-caption d-md-block">
-              <h3 class="icon-container" data-animation="animated zoomInLeft">
-                <span class="fa fa-glass"></span>
-              </h3>
-              <h3 data-animation="animated flipInX">
-                This is the caption for slide 3
-              </h3>
-              <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>
-            </div>
+                    <div class="col-12 nunito p-1 pt-2">
+                      <textarea class="form-control" id="emailmsg" rows="8" placeholder="Message" name ="emailmsg"></textarea>
+                    </div>
+                    <!-- button-->
+                    <div class="col-12 nunito p-1 pt-2 text-center">
+                      <button type="submit" class="btn ">Send</button>
+                    </div>
+                </div>
+              </form>
+                    </div>
+              </div>
           </div>
         </div>
 
-        <!-- controls -->
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-      </div>
-
-    </div>
-  </div>
-</div>
-<p class="p">Demo by Antonietta Perna. <a href="http://www.sitepoint.com/bootstrap-carousel-with-css3-animations" target="_blank">See article</a>.</p>
-
+        </div>
 
 <% include partials/footer %>
