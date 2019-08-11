@@ -64,3 +64,11 @@
       </nav>
 
       <div class="container bodycontainer">
+        <div class="text-center email-sender">
+           <% if(error && error.length > 0) { %>
+             <div class="flash danger" ><p><%=error %></p></div>
+           <% } %>
+           <% if(success && success.length > 0) { %>
+             <div class="flash success" ><p><%= success %></p></div>
+           <% } %>
+        </div>
