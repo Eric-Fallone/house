@@ -37,17 +37,17 @@
                 <div class="test">
                       <p class="text-center nav-quote-text hidden-mobile">"Three generations of building better places to live"</p>
                 </div>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing active nav-active">
+                  <li class="nav-item boarder-top-bottom nav-link-spacing active ">
                       <a class="nav-link nav-text barlow" href="/">Welcome </a>
                   </li>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing">
-                      <a class="nav-link nav-text barlow" href="">Our Homes</a>
+                  <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
+                      <a class="nav-link nav-text barlow" href="/OurHomes">Our Homes</a>
                   </li>
                   <li class="nav-item boarder-top-bottom nav-link-spacing">
-                      <a class="nav-link nav-text barlow" href="">About Fallone</a>
+                      <a class="nav-link nav-text barlow" href="/About">About Fallone</a>
                   </li>
                   <li class="nav-item boarder-top-bottom nav-link-spacing">
-                      <a class="nav-link nav-text barlow" href="">Photo Gallery</a>
+                      <a class="nav-link nav-text barlow" href="Gallery">Photo Gallery</a>
                   </li>
                   <li class="nav-item boarder-top-bottom nav-link-spacing">
                       <a class="nav-link nav-text barlow" href="/Contact">Contact Us</a>
@@ -64,11 +64,11 @@
       </nav>
 
       <div class="container bodycontainer">
-        <div class="text-center email-sender">
+        <div class="text-center">
            <% if(error && error.length > 0) { %>
-             <div class="flash danger" ><p><%=error %></p></div>
+             <div class="flash danger email-sender" ><p><%=error %></p></div>
            <% } %>
            <% if(success && success.length > 0) { %>
-             <div class="flash success" ><p><%= success %></p></div>
+             <div class="flash success email-sender" ><p><%= success %></p></div>
            <% } %>
         </div>

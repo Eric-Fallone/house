@@ -5,8 +5,16 @@ router.get("/", function(req,res){
   res.render("Landing");
 });
 
+router.get("/OurHomes", function(req,res){
+  res.render("OurHomes");
+});
+
 router.get("/About", function(req,res){
   res.render("About");
+});
+
+router.get("/Gallery", function(req,res){
+  res.render("Gallery");
 });
 
 router.get("/Contact", function(req,res){
