@@ -37,28 +37,58 @@
                 <div class="test">
                       <p class="text-center nav-quote-text hidden-mobile">"Three generations of building better places to live"</p>
                 </div>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing active ">
+                  <% if (page == "Landing") { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing nav-active ">
                       <a class="nav-link nav-text barlow" href="/">Welcome </a>
-                  </li>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
-                      <a class="nav-link nav-text barlow" href="/OurHomes">Our Homes</a>
-                  </li>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing">
-                      <a class="nav-link nav-text barlow" href="/About">About Fallone</a>
-                  </li>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing">
-                      <a class="nav-link nav-text barlow" href="Gallery">Photo Gallery</a>
-                  </li>
-                  <li class="nav-item boarder-top-bottom nav-link-spacing">
-                      <a class="nav-link nav-text barlow" href="/Contact">Contact Us</a>
-                  </li>
-                  <li class="nav-item hidden-mobile" style="width:225px;">
-                    <div>
-                      <a class="" href="/">
-                        <img class=" nav-logo" src="/photos/Logo/FH logo 32px.png" alt="">
-                      </a>
-                    </div>
-                  </li>
+                    </li>
+                  <% } else { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing">
+                      <a class="nav-link nav-text barlow" href="/">Welcome </a>
+                    </li>
+                  <% } %>
+                  <% if (page == "OurHomes") { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
+                        <a class="nav-link nav-text barlow" href="/OurHomes">Our Homes</a>
+                    </li>
+                  <% } else { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing">
+                        <a class="nav-link nav-text barlow" href="/OurHomes">Our Homes</a>
+                    </li>
+                  <% } %>
+                  <% if (page == "About") { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
+                        <a class="nav-link nav-text barlow" href="/About">About Fallone</a>
+                    </li>
+                  <% } else { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing">
+                        <a class="nav-link nav-text barlow" href="/About">About Fallone</a>
+                    </li>
+                  <% } %>
+                  <% if (page == "Gallery") { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
+                        <a class="nav-link nav-text barlow" href="Gallery">Photo Gallery</a>
+                    </li>
+                  <% } else { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing">
+                        <a class="nav-link nav-text barlow" href="Gallery">Photo Gallery</a>
+                    </li>
+                  <% } %>
+                  <% if (page == "Contact") { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
+                        <a class="nav-link nav-text barlow" href="/Contact">Contact Us</a>
+                    </li>
+                  <% } else { %>
+                    <li class="nav-item boarder-top-bottom nav-link-spacing">
+                        <a class="nav-link nav-text barlow" href="/Contact">Contact Us</a>
+                    </li>
+                  <% } %>
+                    <li class="nav-item hidden-mobile" style="width:225px;">
+                      <div>
+                        <a class="" href="/">
+                          <img class=" nav-logo" src="/photos/Logo/FH logo 32px.png" alt="">
+                        </a>
+                      </div>
+                    </li>
               </ul>
           </div>
       </nav>
