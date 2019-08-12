@@ -264,3 +264,9 @@ button{
   background-color: rgba(75, 75, 75, 1) !important;
   border:1px solid rgba(133, 136, 131, 1) !important;
 }
+
+.about-div{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 24px;
+}
