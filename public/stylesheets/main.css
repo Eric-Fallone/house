@@ -161,6 +161,9 @@ html,body{
   margin-bottom: 0px;
   /* hidden when too small?*/
 }
+.nav-quote-position{
+  position: relative;
+}
 .nav-link-holder{
   padding-bottom:3px;
 }
