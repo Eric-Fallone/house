@@ -5,25 +5,34 @@ var middleware = require("../middleware");
 var { isLoggedIn, isAdmin} = middleware;
 
 
+
+//list of Houses
+router.get("/", function(req,res){
+  res.locals.page="OurHomes";
+  res.render("OurHomes");
+});
+
+//new
+//has to be above index
+router.get("/new",isLoggedIn, isAdmin, function(req,res){
+  res.locals.page="OurHomes";
+  res.render("house/new");
+});
+
 //index
 router.get("/:address", function(req, res){
-  House.findOne({address:req.params.address},function(err, houseObject){
+  House.findOne({address_street:req.params.address},function(err, houseObject){
     if(err){
       console.log(err);
     } else{
+      res.locals.page="OurHomes";
       res.render("house/index",{listingInfo: houseObject});
     }
   });
 });
 
-//new
-router.get("/house/new",isLoggedIn, isAdmin, function(req,res){
-  res.render("house/new");
-});
-
-
 //create
-router.post("/house", isLoggedIn, isAdmin, function(req, res){
+router.post("/", isLoggedIn, isAdmin, function(req, res){
 
   var author = {
     id: req.user._id,
@@ -49,12 +58,14 @@ router.post("/house", isLoggedIn, isAdmin, function(req, res){
   ];
 
   var newHouse = {
-    address: req.body.address,
-     onMarket: req.body.onMarket,
-     isShowing: req.body.isShowing,
-     description: req.body.description,
-     carousel: data,
-     author: author
+    address_street: req.body.address_street,
+    address_town: req.body.address_town,
+    price: req.body.price,
+    onMarket: req.body.onMarket,
+    isShowing: req.body.isShowing,
+    description: req.body.description,
+    carousel: data,
+    author: author
    };
 
 
@@ -64,18 +75,19 @@ router.post("/house", isLoggedIn, isAdmin, function(req, res){
         console.log(err);
         res.redirect('back')
       }else{
-        res.redirect('/'+newlycreated.address);
+        res.redirect('/OurHomes/'+newlycreated.address_street);
       }
     });
 
 });
 
 //edit
-router.get("/:catagory/:title/edit",isLoggedIn, isAdmin, function(req, res){
-  res.render("blog/edit",{catagory: req.params.catagory ,post:req.post});
+router.get("/:address/edit",isLoggedIn, isAdmin, function(req, res){
+  res.render("house/edit",{listingInfo:req.listingInfo});
 });
+
 //update
-router.put("/:catagory/:title/edit",isLoggedIn, isAdmin, function(req, res){
+router.put("/:address/edit",isLoggedIn, isAdmin, function(req, res){
   var newData = {imgsource: req.body.imgsource, quote: req.body.quote, text: req.body.blogText};
 
   Post.findOneAndUpdate({title:req.params.title}, {$set: newData}, function(err, post){
@@ -88,24 +100,17 @@ router.put("/:catagory/:title/edit",isLoggedIn, isAdmin, function(req, res){
       }
   });
 });
-//delete
-router.delete("/:title",isLoggedIn, isAdmin, function(req, res){
-  var cata =  req.post.catagory;
-  var post_id = req.post._id;
-  console.log(post_id);
-  console.log("----------------------------------------------");
-  Blog.findOneAndUpdate(cata, {$pull: {blogposts:post_id}},function(err,b){
-    console.log(b);
-  });
 
-  Post.deleteOne({_id:post_id},function(err) {
+//delete
+router.delete("/:address",isLoggedIn, isAdmin, function(req, res){
+
+  House.deleteOne({address_street:req.params.address},function(err) {
         if(err) {
             req.flash('error', err.message);
             res.redirect('/');
         } else {
-          console.log("meow");
-            req.flash('success', 'Blog deleted!');
-            res.redirect('/blog/'+cata);
+            req.flash('success', 'Listing deleted!');
+            res.redirect('/');
         }
       })
 });

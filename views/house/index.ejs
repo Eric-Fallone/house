@@ -1,19 +1,55 @@
 <% include ../partials/header %>
+
 <div class="container">
   <div class="row">
-    <%console.log(listingInfo)%>
-      <h1 class="col-md-12 text-center"><%=listingInfo.address%></h1>
-      <h1 class="col-md-12 text-center">Is on the market: <%=listingInfo.onMarket%></h1>
-      <h1 class="col-md-12 text-center">Is showing on website: <%=listingInfo.isShowing%></h1>
-      <h1 class="col-md-12 text-center"><%=listingInfo.description%></h1>
-  </div>
-  <% if( currentUser && currentUser.isAdmin){ %>
-    <div class="pull-right">
-      <a class="btn btn-warning" href="">Edit</a>
-      <form class="delete-form" action="/blog/<%=  %>?_method=DELETE" method="houseInfo">
-        <button class="btn btn-xs btn-danger">DELETE</button>
-      </form>
+    <% if (listingInfo) { %>
+      <% if (listingInfo.address_street) { %>
+        <h1 class="col-md-12 text-center"><%=listingInfo.address_street%></h1>
+      <% } else { %>
+        <h1 class="col-md-12 text-center">No Street address found</h1>
+      <% } %>
+
+      <% if (listingInfo.address_town) { %>
+        <h1 class="col-md-12 text-center"><%=listingInfo.address_town%></h1>
+      <% } else { %>
+        <h1 class="col-md-12 text-center">No town address found</h1>
+      <% } %>
+
+      <% if (listingInfo.price) { %>
+        <h1 class="col-md-12 text-center"><%=listingInfo.price%></h1>
+      <% } else { %>
+        <h1 class="col-md-12 text-center">No price found</h1>
+      <% } %>
+
+      <% if (listingInfo.onMarket) { %>
+        <h1 class="col-md-12 text-center"><%=listingInfo.onMarket%></h1>
+      <% } else { %>
+        <h1 class="col-md-12 text-center">No on market status</h1>
+      <% } %>
+
+      <% if (listingInfo.isShowing == true) { %>
+        <h1 class="col-md-12 text-center">shown on website/can see without logging in</h1>
+      <% } else { %>
+        <h1 class="col-md-12 text-center">Not shown on website</h1>
+      <% } %>
+
+      <% if (listingInfo.description) { %>
+        <h1 class="col-md-12 text-center"><%=listingInfo.description%></h1>
+      <% } else { %>
+        <h1 class="col-md-12 text-center">No description found</h1>
+      <% } %>
     </div>
+    <% if( currentUser && currentUser.isAdmin){ %>
+      <div class="pull-right">
+        <a class="btn btn-warning mb-5" href="/OurHomes/<%= listingInfo.address_street  %>/edit">Edit</a>
+        <form class="delete-form" action="/OurHomes/<%= listingInfo.address_street  %>?_method=DELETE" method="POST">
+          <button class="btn btn-xs btn-danger">DELETE</button>
+        </form>
+      </div>
+    <% } %>
+  <% } else { %>
+    <h1 class="col-md-12 text-center">No Listing Found</h1>
   <% } %>
 </div>
+
 <% include ../partials/footer %>

@@ -6,10 +6,7 @@ router.get("/", function(req,res){
   res.render("Landing");
 });
 
-router.get("/OurHomes", function(req,res){
-  res.locals.page="OurHomes";
-  res.render("OurHomes");
-});
+//our homes route found in house.js
 
 router.get("/About", function(req,res){
   res.locals.page="About";

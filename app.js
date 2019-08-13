@@ -68,7 +68,7 @@ app.use(function(req, res, next){
 });
 
 app.use("/admin",adminRoute);
-app.use("/listing",houseRoute);
+app.use("/OurHomes",houseRoute);
 app.use("/",indexRoute);
 
 var port = normalizePort(process.env.PORT || '3000');

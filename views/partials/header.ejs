@@ -37,6 +37,9 @@
                 <div class="test">
                       <p class="text-center nav-quote-text hidden-mobile">"Three generations of building better places to live"</p>
                 </div>
+                  <% if (typeof page === 'undefined') { %>
+                      <% page = "nothing" %>
+                    <% } %>
                   <% if (page == "Landing") { %>
                     <li class="nav-item boarder-top-bottom nav-link-spacing nav-active ">
                       <a class="nav-link nav-text barlow" href="/">Welcome </a>
@@ -81,6 +84,15 @@
                     <li class="nav-item boarder-top-bottom nav-link-spacing">
                         <a class="nav-link nav-text barlow" href="/Contact">Contact Us</a>
                     </li>
+                  <% } %>
+                  <% if( currentUser && currentUser.isAdmin ===true ) { %>
+                  <li class="nav-item boarder-top-bottom nav-link-spacing">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="/OurHomes/new">New Listing</a>
+                      <a class="dropdown-item" href="/Admin/Logout">Logout</a>
+                    </div>
+                  </li>
                   <% } %>
                     <li class="nav-item hidden-mobile" style="width:225px;">
                       <div>

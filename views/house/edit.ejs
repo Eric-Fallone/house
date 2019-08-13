@@ -1,13 +1,13 @@
 <% include ../partials/header %>
-
+<%=console.log(listingInfo)%>
 <div class = "container">
-  <h1 style="text-align: center">New House Listing</h1>
+  <h1 style="text-align: center">EDIT House Listing</h1>
   <p>BECARE FULL OF WHITESPACE IN THE INPUTS</p>
   <form action="/OurHomes/" method="POST">
 
     <div class="form-group">
         <label for="address">Street:</label>
-        <input class="form-control" id="address_street" type="text" placeholder="Street" name ="address_street">
+        <input class="form-control" id="address_street" type="text" value="<%=listingInfo.address_street%>" name ="address_street">
     </div>
     <div class="form-group">
         <label for="address">Township:</label>
