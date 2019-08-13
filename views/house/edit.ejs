@@ -1,38 +1,45 @@
 <% include ../partials/header %>
-<%=console.log(listingInfo)%>
+
 <div class = "container">
   <h1 style="text-align: center">EDIT House Listing</h1>
   <p>BECARE FULL OF WHITESPACE IN THE INPUTS</p>
-  <form action="/OurHomes/" method="POST">
+  <form action="/OurHomes/<%=listingInfo.address_street%>/edit?_method=PUT" method="POST">
 
     <div class="form-group">
-        <label for="address">Street:</label>
-        <input class="form-control" id="address_street" type="text" value="<%=listingInfo.address_street%>" name ="address_street">
+        <label for="address">Street:  (cannot change)</label>
+        <%=listingInfo.address_street%>
+        <input class="form-control" style="visibility: hidden;" id="address_street" type="text" value="<%=listingInfo.address_street%>" name ="address_street">
     </div>
     <div class="form-group">
         <label for="address">Township:</label>
-        <input class="form-control" id="address_town" type="text" placeholder="Township" name ="address_town">
+        <input class="form-control" id="address_town" type="text" value="<%=listingInfo.address_town%>" name ="address_town">
     </div>
     <div class="form-group">
         <label for="address">Price:</label>
-        <input class="form-control" id="price" type="text" placeholder="Price" name ="price">
+        <input class="form-control" id="price" type="text" value="<%=listingInfo.price%>" name ="price">
     </div>
     <label>Is this house on the market?</label>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="onMarket" id="onMarket1" value="Currently for Sale" >
+      <input class="form-check-input" type="radio" name="onMarket" id="onMarket1" value="Currently for Sale" <% if(listingInfo.onMarket === "Currently for Sale") {%>checked<%}%> >
       <label class="form-check-label" for="onMarket1">
         Currently for Sale
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="onMarket" id="onMarket2" value="About to go to market" checked>
+      <input class="form-check-input" type="radio" name="onMarket" id="onMarket2" value="About to go to market" <% if(listingInfo.onMarket === "About to go to market") {%>checked<%}%> >
       <label class="form-check-label" for="onMarket2">
         About to go to market
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="onMarket" id="onMarket3" value="Sold">
-      <label class="form-check-label" for="onMarket2">
+      <input class="form-check-input" type="radio" name="onMarket" id="onMarket3" value="under contract" <% if(listingInfo.onMarket === "under contract") {%>checked<%}%>>
+      <label class="form-check-label" for="onMarket3">
+        Under Contract
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="onMarket" id="onMarket4" value="Sold" <% if(listingInfo.onMarket === "Sold") {%>checked<%}%>>
+      <label class="form-check-label" for="onMarket4">
         Sold
       </label>
     </div>
@@ -40,13 +47,13 @@
     <label>Is this house on the market?</label>
 
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="isShowing" id="isShowing1" value="true" >
+      <input class="form-check-input" type="radio" name="isShowing" id="isShowing1" value="true"  <% if(listingInfo.isShowing == true) {%>checked<%}%>>
       <label class="form-check-label" for="isShowing1">
         SHOW
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="isShowing" id="isShowing2" value="false" checked>
+      <input class="form-check-input" type="radio" name="isShowing" id="isShowing2" value="false"  <% if(listingInfo.isShowing == false) {%>checked<%}%>>
       <label class="form-check-label" for="isShowing2">
         DO NOT SHOW
       </label>
@@ -54,7 +61,7 @@
 
     <div class="form-group">
         <label for="text">Description</label>
-        <textarea class="form-control" id="description" rows="5" name ="description" ></textarea>
+        <textarea class="form-control" id="description" rows="5" name ="description" ><%=listingInfo.description%></textarea>
     </div>
 
     <label>Carousel Images this isnt used atm</label>

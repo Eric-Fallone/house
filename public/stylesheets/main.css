@@ -9,6 +9,38 @@
   .footer-text{
     font-size: 8px;
   }
+  /*    fonts          */
+
+  .barlow{
+    font-family: 'Barlow', sans-serif;
+    color: #4B4B4B;
+  }
+
+  .nunito{
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .address-street{
+    font-size: 16px;
+  }
+
+  .address-town{
+    font-size: 20px;
+    line-height: 20px;
+
+  }
+
+  .cost{
+    font-size: 20px;
+    color: red;
+  }
+
+  a.nav-link{
+    font-size: 16px;
+  }
+
+
+  /*    fonts          */
 }
 @media only screen and (min-width: 768px) {
 .hidden-mobile{
@@ -27,6 +59,44 @@
   .footer-text{
     font-size: 12px;
   }
+  /*    fonts          */
+
+  .barlow{
+    font-family: 'Barlow', sans-serif;
+    color: #4B4B4B;
+  }
+
+  .nunito{
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .address-street{
+    font-size: 18px;
+  }
+
+  .address-town{
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .availability{
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+  }
+
+  .cost{
+    font-size: 30px;
+    font-weight: bold;
+    color: red;
+  }
+
+  a.nav-link{
+    font-size: 16px;
+  }
+
+
+  /*    fonts          */
 }
 
 
@@ -80,9 +150,7 @@ html,body{
 .nav-logo-holder{
   padding-bottom:0;
 }
-.test{
-  position: relative;
-}
+
 .nav-quote-text{
   position: absolute;
   width: 360px;/*getit it on a single line*/
@@ -164,6 +232,9 @@ box-shadow: 0px 8px 6px -6px #888;
   width: auto;
   display: none;
 }
+.carousel-text{
+  padding-top: 10px;
+}
 .overlay-helper:hover .carousel-overlay{
   display: block;
 }
@@ -184,46 +255,6 @@ box-shadow: 0px 8px 6px -6px #888;
   margin-left: 80px;
 }
 
-/*    fonts          */
-
-.barlow{
-  font-family: 'Barlow', sans-serif;
-  color: #4B4B4B;
-  font-size: 16px;
-}
-
-.nunito{
-  font-family: 'Nunito', sans-serif;
-}
-
-.address-street{
-  font-size: 18px;
-  padding-top: 10px;
-}
-
-.address-town{
-  font-size: 38px;
-  font-weight: bold;
-}
-
-.availability{
-  font-size: 38px;
-  color: red;
-  font-weight: bold;
-}
-
-.cost{
-  font-size: 38px;
-  font-weight: bold;
-  color: red;
-}
-
-a.nav-link{
-  font-size: 16px;
-}
-
-
-/*    fonts          */
 
 /*    email sender    */
 .email-sender{
@@ -263,4 +294,15 @@ input[type="text"], #emailmsg {
   color: white !important;
   background-color: rgba(75, 75, 75, 1) !important;
   border:1px solid rgba(133, 136, 131, 1) !important;
+}
+
+.about-div{
+  background-color: rgba(235, 235, 235, 1);
+  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;
+  height: 20px;
+}
+
+.list-img{
+  border-radius: 5px;
+  box-shadow: 0px 8px 6px -6px #888;
 }

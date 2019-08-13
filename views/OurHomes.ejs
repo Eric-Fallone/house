@@ -2,33 +2,84 @@
 
 <div class="container">
 
-    <div class="row">
-      <div class="col-7">
-        <img class="d-block w-100 img-fluid" src="/photos/Pictures/5sd/5sd front.jpg" alt="First slide">
-      </div>
-      <div class="col-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <p>Title</p>
-            </div>
-            <div class="col-12">
-              <p>Title</p>
-            </div>
-            <div class="col-12">
-              <p>Title</p>
-            </div>
-            <div class="col-12">
-              <p>Title</p>
-            </div>
+  <% for(var i=0; i<allHouses.length;i++){ %>
+  <div class="row mt-4 mb-4">
+    <div class="col-7">
+      <a href="/OurHomes/<%=allHouses[i].address_street%>">
+        <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/5sd/5sd front.jpg" alt="First slide">
+      </a>
+    </div>
+    <div class="col-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="address-town nunito mb-0">
+                <% if (allHouses[i].address_street) { %>
+                    <%=allHouses[i].address_street%>
+                  <% } else { %>
+                    No Street address found
+                  <% } %></p>
+          </div>
+          <div class="col-12">
+            <p class="address-street nunito pt-0 mb-0">
+              <% if (allHouses[i].address_town) { %>
+                  <%=allHouses[i].address_town%>
+                <% } else { %>
+                  No town address found
+                <% } %></p>
+            </p>
+          </div>
+          <div class="col-12">
+            <p class="cost nunito mb-0">
+              <% if (allHouses[i].onMarket && allHouses[i].price) { %>
+                <% if(allHouses[i].onMarket === "Currently for Sale"){ %>
+                    OFFERED AT <%=allHouses[i].price%>
+                <% } %>
+                <% if(allHouses[i].onMarket === "About to go to market"){ %>
+                    COMING SOON
+                <% } %>
+                <% if(allHouses[i].onMarket === "under contract"){ %>
+                    UNDER CONTRACT
+                <% } %>
+                <% if(allHouses[i].onMarket === "Sold"){ %>
+                    SOLD
+                <% } %>
+              <% } else { %>
+                No on market status
+              <% } %>
+            </p>
+          </div>
+          <div class="col-12 hidden-mobile">
+            <p class="nunito">
+              <% if (allHouses[i].description) { %>
+                <%=allHouses[i].description%>
+              <% } else { %>
+                No description found
+              <% } %>
+            </p>
           </div>
         </div>
       </div>
     </div>
+    <div class="col-12 mt-3 shown-mobile">
+      <p class="nunito">
+        <% if (allHouses[i].description) { %>
+          <%=allHouses[i].description%>
+        <% } else { %>
+          No description found
+        <% } %>
+      </p>
+    </div>
+  </div>
+
+  <% if(i+1 !==allHouses.length){ %>
     <div class="row">
-      <div class="col-12 about-div footer-style">
+      <div class="col-12 about-div">
+
       </div>
     </div>
+    <% } %>
+  <% } %>
 </div>
 
 <% include partials/footer %>

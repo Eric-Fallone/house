@@ -1,44 +1,73 @@
 <% include ../partials/header %>
-
+<% if (listingInfo) { %>
 <div class="container">
   <div class="row">
-    <% if (listingInfo) { %>
-      <% if (listingInfo.address_street) { %>
-        <h1 class="col-md-12 text-center"><%=listingInfo.address_street%></h1>
-      <% } else { %>
-        <h1 class="col-md-12 text-center">No Street address found</h1>
-      <% } %>
-
-      <% if (listingInfo.address_town) { %>
-        <h1 class="col-md-12 text-center"><%=listingInfo.address_town%></h1>
-      <% } else { %>
-        <h1 class="col-md-12 text-center">No town address found</h1>
-      <% } %>
-
-      <% if (listingInfo.price) { %>
-        <h1 class="col-md-12 text-center"><%=listingInfo.price%></h1>
-      <% } else { %>
-        <h1 class="col-md-12 text-center">No price found</h1>
-      <% } %>
-
-      <% if (listingInfo.onMarket) { %>
-        <h1 class="col-md-12 text-center"><%=listingInfo.onMarket%></h1>
-      <% } else { %>
-        <h1 class="col-md-12 text-center">No on market status</h1>
-      <% } %>
-
-      <% if (listingInfo.isShowing == true) { %>
-        <h1 class="col-md-12 text-center">shown on website/can see without logging in</h1>
-      <% } else { %>
-        <h1 class="col-md-12 text-center">Not shown on website</h1>
-      <% } %>
-
-      <% if (listingInfo.description) { %>
-        <h1 class="col-md-12 text-center"><%=listingInfo.description%></h1>
-      <% } else { %>
-        <h1 class="col-md-12 text-center">No description found</h1>
-      <% } %>
+    <div class="col-7">
+      <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/5sd/5sd front.jpg" alt="First slide">
     </div>
+    <div class="col-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <p class="address-town nunito mb-0">
+                <% if (listingInfo.address_street) { %>
+                    <%=listingInfo.address_street%>
+                  <% } else { %>
+                    No Street address found
+                  <% } %></p>
+          </div>
+          <div class="col-12">
+            <p class="address-street nunito pt-0 mb-0">
+              <% if (listingInfo.address_town) { %>
+                  <%=listingInfo.address_town%>
+                <% } else { %>
+                  No town address found
+                <% } %></p>
+            </p>
+          </div>
+          <div class="col-12">
+            <p class="cost nunito mb-0">
+              <% if (listingInfo.onMarket && listingInfo.price) { %>
+                <% if(listingInfo.onMarket === "Currently for Sale"){ %>
+                    OFFERED AT <%=listingInfo.price%>
+                <% } %>
+                <% if(listingInfo.onMarket === "About to go to market"){ %>
+                    COMING SOON
+                <% } %>
+                <% if(listingInfo.onMarket === "under contract"){ %>
+                    UNDER CONTRACT
+                <% } %>
+                <% if(listingInfo.onMarket === "Sold"){ %>
+                    SOLD
+                <% } %>
+              <% } else { %>
+                No on market status
+              <% } %>
+            </p>
+          </div>
+          <div class="col-12 hidden-mobile">
+            <p class="nunito">
+              <% if (listingInfo.description) { %>
+                <%=listingInfo.description%>
+              <% } else { %>
+                No description found
+              <% } %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mt-3 shown-mobile">
+      <p class="nunito">
+        <% if (listingInfo.description) { %>
+          <%=listingInfo.description%>
+        <% } else { %>
+          No description found
+        <% } %>
+      </p>
+    </div>
+  </div>
+
     <% if( currentUser && currentUser.isAdmin){ %>
       <div class="pull-right">
         <a class="btn btn-warning mb-5" href="/OurHomes/<%= listingInfo.address_street  %>/edit">Edit</a>
