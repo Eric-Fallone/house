@@ -3,7 +3,7 @@
 <div class="container">
 
   <% for(var i=0; i<allHouses.length;i++){ %>
-  <div class="row mt-4 mb-4">
+  <div class="row mt-4 mb-4 about-div">
     <div class="col-7">
       <a href="/OurHomes/<%=allHouses[i].address_street%>">
         <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/5sd/5sd front.jpg" alt="First slide">
@@ -71,14 +71,6 @@
       </p>
     </div>
   </div>
-
-  <% if(i+1 !==allHouses.length){ %>
-    <div class="row">
-      <div class="col-12 about-div">
-
-      </div>
-    </div>
-    <% } %>
   <% } %>
 </div>
 
