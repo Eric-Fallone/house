@@ -7,9 +7,9 @@
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
         <% for(var i=0; i<allHouses.length;i++){ %>
-        <div class="carousel-item active">
+        <div class="carousel-item <% if(i == 0) {%>active<%}%>">
           <div class=" overlay-helper">
-            <img class="d-block w-100 img-fluid" src="/photos/Pictures/5sd/5sd front.jpg" alt="First slide">
+            <img class="d-block w-100 img-fluid" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
             <div class="carousel-overlay">
                 <p class="overlay-left address-street carousel-text nunito"><%=allHouses[i].address_street%></p>
             </div>
@@ -42,7 +42,6 @@
           </div>
         </div>
         <% } %>
-
       </div>
       <!--/.Slides-->
       <!--Controls-->
@@ -55,7 +54,7 @@
         <span class="sr-only">Next</span>
       </a>
       <!--/.Controls-->
-    </div>
+  </div>
 
     <!--/.Carousel Wrapper-->
 
