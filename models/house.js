@@ -3,6 +3,7 @@ var mongoose = require("mongoose");
 var HouseSchema = new mongoose.Schema({
     address_street: { type: String, unique:true, require:true},
     address_town: String,
+    picture_main: String,
     price: String,
     onMarket: String, //  1  Currently for Sale   2  About to go to market   3 Sold 4 under contract
     isShowing: Boolean,

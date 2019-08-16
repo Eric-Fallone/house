@@ -11,7 +11,8 @@ var express     = require("express"),
     methodOverride = require("method-override"),
     User        = require("./models/user"),
     House        = require("./models/house"),
-    normalizePort=require('normalize-port');
+    normalizePort=require('normalize-port'),
+    fileUpload = require('express-fileupload');
 
 require('dotenv').config();
 //routes
@@ -38,6 +39,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 app.use(cookieParser('secret'));
 app.use(flash());
+app.use(fileUpload());
 
 //require moment
 app.locals.moment = require('moment');

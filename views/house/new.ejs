@@ -3,7 +3,7 @@
 <div class = "container">
   <h1 style="text-align: center">New House Listing</h1>
   <p>BECARE FULL OF WHITESPACE IN THE INPUTS</p>
-  <form action="/OurHomes/" method="POST">
+  <form action="/OurHomes/" method="POST" encType="multipart/form-data">
 
     <div class="form-group">
         <label for="address">Street:</label>
@@ -61,6 +61,11 @@
     <div class="form-group">
         <label for="text">Description</label>
         <textarea class="form-control" id="description" rows="5" name ="description" ></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="thumb_pic">Thumbnail Picture</label>
+        <input type="file" name="thumb_pic" />
     </div>
 
     <label>Carousel Images this isnt used atm</label>

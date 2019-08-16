@@ -45,9 +45,9 @@ router.post("/", isLoggedIn, isAdmin, function(req, res){
     id: req.user._id,
     username: req.user.username
   }
-
+  data=[];
   //todo create carousel
-   data = [{
+   /* data = [{
   		"url": "https://static.wixstatic.com/media/764cd8_c29ecf55ac8142e19dad9386ec21b4d8~mv2.jpg/v1/fill/w_970,h_526,al_c,q_85,usm_0.66_1.00_0.01/764cd8_c29ecf55ac8142e19dad9386ec21b4d8~mv2.webp",
   		"title": "Title One",
   		"subtext": "Sub text one"
@@ -62,11 +62,22 @@ router.post("/", isLoggedIn, isAdmin, function(req, res){
   		"title": "Title three",
   		"subtext": "Sub text three"
   	}
-  ];
+  ]; */
+  console.log(req.files);
+  sampleFile = req.files.thumb_pic;
+// repositories/house/public/
+  filepath = './public/photos/Pictures/thumb' + req.body.address_street + '.jpg';
+
+  sampleFile.mv(filepath, function(err) {
+    if(err){
+      console.log(err);
+    }
+  });
 
   var newHouse = {
     address_street: req.body.address_street,
     address_town: req.body.address_town,
+    picture_main: filepath,
     price: req.body.price,
     onMarket: req.body.onMarket,
     isShowing: req.body.isShowing,
@@ -101,6 +112,7 @@ router.get("/:address/edit",isLoggedIn, isAdmin, function(req, res){
 
 //update
 router.put("/:address/edit",isLoggedIn, isAdmin, function(req, res){
+
   var newData = {
     address_town: req.body.address_town,
     price: req.body.price,
