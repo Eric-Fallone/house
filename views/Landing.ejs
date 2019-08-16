@@ -6,7 +6,7 @@
     <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
       <!--Slides-->
       <div class="carousel-inner" role="listbox">
-        <% for(var i=0; i<allHouses.length;i++){ %>
+        <% for(var i=0; i < allHouses.length ; i++){ %>
         <div class="carousel-item <% if(i == 0) {%>active<%}%>">
           <div class=" overlay-helper">
             <img class="d-block w-100 img-fluid" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
