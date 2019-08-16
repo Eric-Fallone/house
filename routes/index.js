@@ -1,9 +1,16 @@
 var express = require("express");
+var House = require("../models/house");
 var router  = express.Router();
 
 router.get("/", function(req,res){
   res.locals.page="Landing";
-  res.render("Landing");
+  House.find({isShowing:true},function(err, houseObject){
+    if(err){
+      console.log(err);
+    } else{
+      res.render("Landing", {allHouses: houseObject});
+    }
+  });
 });
 
 //our homes route found in house.js
