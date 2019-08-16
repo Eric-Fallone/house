@@ -4,6 +4,7 @@ var router  = express.Router();
 
 router.get("/", function(req,res){
   res.locals.page="Landing";
+  
   House.find({isShowing:true},function(err, houseObject){
     if(err){
       console.log(err);
