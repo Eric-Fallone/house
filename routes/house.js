@@ -63,16 +63,19 @@ router.post("/", isLoggedIn, isAdmin, function(req, res){
   		"subtext": "Sub text three"
   	}
   ]; */
-  console.log(req.files);
-  sampleFile = req.files.thumb_pic;
-// repositories/house/public/
-  filepath = './public/photos/Pictures/thumb' + req.body.address_street + '.jpg';
+  if( req.files ){
+    sampleFile = req.files.thumb_pic;
+  // repositories/house/public/
+    filepath = './public/photos/Pictures/thumb' + req.body.address_street + '.jpg';
 
-  sampleFile.mv(filepath, function(err) {
-    if(err){
-      console.log(err);
-    }
-  });
+    sampleFile.mv(filepath, function(err) {
+      if(err){
+        console.log(err);
+      }
+    });
+  }else {
+    filepath = "";
+  }
 
   var newHouse = {
     address_street: req.body.address_street,
@@ -113,13 +116,38 @@ router.get("/:address/edit",isLoggedIn, isAdmin, function(req, res){
 //update
 router.put("/:address/edit",isLoggedIn, isAdmin, function(req, res){
 
-  var newData = {
-    address_town: req.body.address_town,
-    price: req.body.price,
-    onMarket: req.body.onMarket,
-    isShowing: req.body.isShowing,
-    description: req.body.description
-  };
+  if( req.files){
+    console.log(req.files.thumb_pic);
+    sampleFile = req.files.thumb_pic;
+
+    //todo delete or get this to replace current file on sever
+
+    filepath = './public/photos/Pictures/thumb' + req.files.thumb_pic.name + '.jpg';
+
+    sampleFile.mv(filepath, function(err) {
+      if(err){
+        console.log(err);
+      }else {
+        var newHouse = {
+          address_town: req.body.address_town,
+          picture_main: filepath,
+          price: req.body.price,
+          onMarket: req.body.onMarket,
+          isShowing: req.body.isShowing,
+          description: req.body.description,
+         };
+      }
+    });
+  }else {
+    var newData = {
+      address_town: req.body.address_town,
+      price: req.body.price,
+      onMarket: req.body.onMarket,
+      isShowing: req.body.isShowing,
+      description: req.body.description
+    };
+  }
+
 
   House.findOneAndUpdate({address_street:req.body.address_street}, {$set: newData}, function(err, houseObject){
       if(err){

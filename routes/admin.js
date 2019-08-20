@@ -49,7 +49,17 @@ router.post("/register",function(req,res){
 });
 //
 
-
+router.get("/OurHomes", isAdmin, function(req,res){
+  res.locals.page="OurHomes";
+  House.find({},function(err, houseObject){
+    if(err){
+      console.log(err);
+    } else{
+      res.locals.page="OurHomes";
+      res.render("OurHomes",{allHouses: houseObject});
+    }
+  });
+});
 
 
 

@@ -61,4 +61,4 @@ typings/
 .next
 
 #ignores picutes on website
-.jpg
+*.jpg
