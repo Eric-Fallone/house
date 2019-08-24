@@ -235,7 +235,12 @@ html,body{
 border-radius: 5px;
 box-shadow: 0px 8px 6px -6px #888;
 }
-
+.carousel-control-next, .carousel-control-prev{
+  margin-bottom: 50px;
+  background-color: rgb(0,0,0,.35);
+  width: 50px;
+  visibility: hidden;
+}
 .carousel-overlay{
   position: absolute;
   bottom: 0;
@@ -252,8 +257,8 @@ box-shadow: 0px 8px 6px -6px #888;
 .overlay-helper:hover .carousel-overlay{
   display: block;
 }
-.carousel-control-next:hover .carousel-overlay{
-  display: block;
+.overlay-helper:hover .carousel-control-next, .overlay-helper:hover .carousel-control-prev{
+  visibility: visible;
 }
 
 
