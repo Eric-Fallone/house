@@ -108,7 +108,6 @@ html,body{
   min-height: 100%;
   margin-bottom: -100px;
   padding-bottom: 100px;
-  background-color: #e5e8e2;
 }
 
 .bodycontainer{
@@ -285,7 +284,7 @@ box-shadow: 0px 8px 6px -6px #888;
 
 /*    footer          */
 .footer-style{
-  background-color: rgba(235, 235, 235, 1);
+  background-color: #e5e8e2;
   box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;
 }
 .footer-spacing{
