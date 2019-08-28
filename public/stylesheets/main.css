@@ -92,7 +92,9 @@
   }
 
   a.nav-link{
-    font-size: 16px;
+    font-size: 18px;
+  /*  font-weight: bold;    This doesnt work      */
+    transform: scaleY(1.1);
   }
 
 
@@ -116,11 +118,11 @@ html,body{
 }
 
 .nav-subbar{
-  background-color: rgba(235, 235, 235, 1);
+  background-color: #e5e8e2;
   box-shadow: 0 8px 6px -6px black;
 }
 
-.nav-img{
+.nav-img{          /*NOT USED??? */
     width: 224px;
     height: 125px;
 }
@@ -159,10 +161,11 @@ html,body{
 
 .nav-quote-text{
   position: absolute;
-  width: 360px;/*getit it on a single line*/
-  left: 30px;
-  top:40px;
+  width: 400px;/*getit it on a single line*/
+  left: 55px;
+  top:20px;
   font-style: italic;
+  font-size: 17px;
   color:#5e8776;
   margin-bottom: 0px;
   /* hidden when too small?*/
@@ -171,7 +174,7 @@ html,body{
   position: relative;
 }
 .nav-link-holder{
-  padding-bottom:3px;
+  padding-bottom: 0px;
 }
 #collapsingNavbar{
   margin-bottom: 10px;
@@ -191,13 +194,13 @@ html,body{
 }
 .nav-link-spacing{
   margin-top: auto;
-  margin-bottom: 10px;
+  margin-bottom: 10px;      /*height of nav bar*/
   padding-left: 22px;
   padding-right: 22px;
 }
 .nav-link-spacing > a{
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 @media only screen and (max-width: 990px) {
   .nav-link-spacing{
