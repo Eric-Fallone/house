@@ -121,7 +121,7 @@ html,body{
 
 .nav-subbar{
   background-color: #e5e8e2;
-  box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px #888;
 }
 
 .nav-img{          /*NOT USED??? */
@@ -237,7 +237,7 @@ html,body{
 
 .overlay-helper > img{
 border-radius: 5px;
-box-shadow: 0px 8px 6px -6px #888;
+box-shadow: 0px 10px 6px -6px #888;
 }
 .carousel-control-next, .carousel-control-prev{
   margin-bottom: 50px;
@@ -260,6 +260,7 @@ box-shadow: 0px 8px 6px -6px #888;
 }
 .overlay-helper:hover .carousel-overlay{
   display: block;
+  border-radius: 5px;
 }
 .overlay-helper:hover .carousel-control-next, .overlay-helper:hover .carousel-control-prev{
   visibility: visible;
@@ -276,6 +277,7 @@ box-shadow: 0px 8px 6px -6px #888;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 80px;
+
 }
 
 
