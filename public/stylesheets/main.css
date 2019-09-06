@@ -27,13 +27,14 @@
 
   .address-town{
     font-size: 20px;
-    line-height: 20px;
+
 
   }
 
   .cost{
     font-size: 20px;
     color: red;
+
   }
 
   a.nav-link{
