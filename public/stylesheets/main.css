@@ -1,4 +1,4 @@
-@media only screen and (max-width: 768px) {
+media only screen and (max-width: 768px) {
 
   .hidden-mobile{
     display: none;
@@ -27,7 +27,6 @@
 
   .address-town{
     font-size: 20px;
-
 
   }
 
@@ -117,7 +116,7 @@ html,body{
 
 .bodycontainer{
   max-width: 980px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 .nav-subbar{
@@ -240,15 +239,15 @@ html,body{
 border-radius: 5px;
 box-shadow: 0px 10px 6px -6px #888;
 }
-.carousel-control-next, .carousel-control-prev{
+.carousel-control-next, .carousel-{
   margin-bottom: 50px;
-  background-color: rgb(0,0,0,.35);
+  background-color: rgb(210, 210, 210, 0.5);
   width: 50px;
   visibility: hidden;
 }
 .carousel-overlay{
   position: absolute;
-  bottom: 0;
+  bottom: 30px;
   right: 0;
   left: 0;
   height: 50px;
@@ -261,7 +260,10 @@ box-shadow: 0px 10px 6px -6px #888;
 }
 .overlay-helper:hover .carousel-overlay{
   display: block;
-  border-radius: 5px;
+  border-radius: 0px, 0px, 5px ,5px;
+  border-style: groove none groove none;
+  border-width: 3px;
+  border-color: rgba(210, 210, 210, 1);
 }
 .overlay-helper:hover .carousel-control-next, .overlay-helper:hover .carousel-control-prev{
   visibility: visible;
