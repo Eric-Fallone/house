@@ -1,10 +1,11 @@
 var express = require("express");
 var House = require("../models/house");
 var router  = express.Router();
+var emailer = require("../public/scripts/email.js")
 
 router.get("/", function(req,res){
   res.locals.page="Landing";
-  
+
   House.find({isShowing:true},function(err, houseObject){
     if(err){
       console.log(err);
@@ -39,7 +40,7 @@ router.post("/Contact",   function(req, res){
     subject:req.body.subject,
     message:req.body.emailmsg,
   };
-  //emailer.sendEmail(email);
+  emailer.sendEmail(email);
   req.flash("success","Email Sender not Hooked up yet");
   res.redirect("/");
 });
