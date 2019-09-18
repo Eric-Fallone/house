@@ -239,11 +239,16 @@ html,body{
 border-radius: 5px;
 box-shadow: 0px 10px 6px -6px #888;
 }
-.carousel-control-next, .carousel-{
-  margin-bottom: 50px;
-  background-color: rgb(210, 210, 210, 0.5);
+.carousel-control-next, .carousel-control-prev{
   width: 50px;
-  visibility: hidden;
+}
+.carousel-controls{
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  left: 0;
+  height: 50px;
+  width: auto;
 }
 .carousel-overlay{
   position: absolute;
