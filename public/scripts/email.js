@@ -14,8 +14,8 @@ module.exports={
     var mailOptions = {
       from: process.env.ERIC_EMAIL_ACCOUNT,
       to: process.env.ANDREW_EMAIL_ACCOUNT,
-      subject:emailData.first+" "+emailData.last+" from "+ emailData.company,
-      text: emailData.company+"\n\n"+emailData.first+" "+emailData.last+"\n\n"+emailData.message+"\n\n"+emailData.telephone
+      subject:emailData.name+" - "+emailData.subject,
+      text: emailData.name+"\n\n"+emailData.email+"\n\n" + emailData.subject + "\n\n" + emailData.message
     };
 
     transporter.sendMail(mailOptions, function(error, info){
@@ -23,7 +23,6 @@ module.exports={
         console.log(error);
       } else {
         console.log('Email sent: ' + info.response);
-        discord.webHook(emailData.first+" "+emailData.last+" from "+ emailData.company+" has send you an email.");
       }
     });
   }

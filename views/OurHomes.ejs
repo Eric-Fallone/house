@@ -6,7 +6,7 @@
   <div class="row mt-4 mb-4 about-div">
     <div class="col-7">
       <a href="/OurHomes/<%=allHouses[i].address_street%>">
-        <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
+        <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="">
       </a>
     </div>
     <div class="col-5">
@@ -17,7 +17,7 @@
                 <% if (allHouses[i].address_street) { %>
                     <%=allHouses[i].address_street%>
                   <% } else { %>
-                    No Street address found
+
                   <% } %></p>
           </div>
           <div class="col-12">
@@ -25,7 +25,7 @@
               <% if (allHouses[i].address_town) { %>
                   <%=allHouses[i].address_town%>
                 <% } else { %>
-                  No town address found
+
                 <% } %></p>
             </p>
           </div>
@@ -45,7 +45,7 @@
                     SOLD
                 <% } %>
               <% } else { %>
-                No on market status
+                No market status
               <% } %>
             </p>
           </div>
@@ -54,7 +54,7 @@
               <% if (allHouses[i].description) { %>
                 <%=allHouses[i].description%>
               <% } else { %>
-                No description found
+
               <% } %>
             </p>
           </div>
@@ -66,7 +66,7 @@
         <% if (allHouses[i].description) { %>
           <%=allHouses[i].description%>
         <% } else { %>
-          No description found
+
         <% } %>
       </p>
     </div>

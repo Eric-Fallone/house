@@ -1,7 +1,6 @@
 <% include partials/header %>
 
 
-
 <!--Carousel Wrapper-->
     <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
       <!--Slides-->
@@ -21,12 +20,12 @@
               </a>
             </div>
               <!--/.Controls-->
-            <img class="d-block w-100 img-fluid" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
+            <img class="d-block w-100 img-fluid carousel-holder" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
             <div class="carousel-overlay">
                 <p class="overlay-left address-street carousel-text nunito"><%=allHouses[i].address_street%></p>
             </div>
           </div>
-          <div class="container p-0">
+          <div id="carousel-info-label" class="container p-0">
             <div class="row">
               <div class="col-6">
                 <p class="address-town nunito"><%=allHouses[i].address_town%></p>

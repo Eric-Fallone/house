@@ -40,8 +40,10 @@ router.post("/Contact",   function(req, res){
     subject:req.body.subject,
     message:req.body.emailmsg,
   };
+
   emailer.sendEmail(email);
-  req.flash("success","Email Sender not Hooked up yet");
-  res.redirect("/");
+  req.flash("success","Email Sent!");
+  res.redirect("/Contact");
+
 });
 module.exports = router;
