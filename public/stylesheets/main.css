@@ -1,11 +1,13 @@
-media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
   .hidden-mobile{
     display: none;
   }
+
   .shown-mobile{
     display: block;
   }
+
   .footer-text{
     font-size: 5px;
     font-weight: 500;
