@@ -21,6 +21,11 @@ media only screen and (max-width: 768px) {
     font-family: 'Nunito Sans', sans-serif;
   }
 
+  .nunitodark{
+    font-family: 'Nunito Sans', sans-serif;
+    color: #4b4b4b !important;
+  }
+
   .address-street{
     font-size: 16px;
   }
@@ -315,7 +320,7 @@ box-shadow: 0px 10px 6px -6px #888;
 /*    footer          */
 
 input[type="text"], #emailmsg {
-  background-color: rgba(226, 232, 232, 1) ;
+  background-color: #e5e8e2 ;
   border:1px solid rgba(133, 136, 131, 1);
 }
 
@@ -336,4 +341,14 @@ input[type="text"], #emailmsg {
 .list-img{
   border-radius: 5px;
   box-shadow: 0px 8px 6px -6px #888;
+}
+
+.contact-img{
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 3px #888
+}
+
+
+.emailformcolor{
+
 }
