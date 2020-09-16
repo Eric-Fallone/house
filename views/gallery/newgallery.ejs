@@ -1,0 +1,21 @@
+<% include ../partials/header %>
+
+<div class = "container">
+  <h1 style="text-align: center">New Blog Page</h1>
+
+  <form action="/admin/newgallery" method="POST">
+
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input class="form-control" id="title" type="text" placeholder="Title" name ="title">
+    </div>
+
+    <div class="form-group">
+        <label for="text">description: unused atm</label>
+        <textarea class="form-control" id="text" rows="5" name ="description" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary background_orange_color">Submit</button>
+  </form>
+</div>
+
+<% include ../partials/footer %>

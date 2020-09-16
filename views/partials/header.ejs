@@ -7,8 +7,9 @@
 
       <title>Fallone Homes</title>
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      
       <link rel="stylesheet" href="/stylesheets/main.css">
+      <link rel="stylesheet" href="/stylesheets/index.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -72,11 +73,11 @@
                   <% } %>
                   <% if (page == "Gallery") { %>
                     <li class="nav-item boarder-top-bottom nav-link-spacing nav-active">
-                        <a class="nav-link nav-text barlow" href="Gallery">Photo Gallery</a>
+                        <a class="nav-link nav-text barlow" href="/Gallery">Photo Gallery</a>
                     </li>
                   <% } else { %>
                     <li class="nav-item boarder-top-bottom nav-link-spacing">
-                        <a class="nav-link nav-text barlow" href="Gallery">Photo Gallery</a>
+                        <a class="nav-link nav-text barlow" href="/Gallery">Photo Gallery</a>
                     </li>
                   <% } %>
                   <% if (page == "Contact") { %>
@@ -88,12 +89,13 @@
                         <a class="nav-link nav-text barlow" href="/Contact">Contact Us</a>
                     </li>
                   <% } %>
-                  <% if( currentUser && currentUser.isAdmin ===true ) { %>
+                  <% if( currentUser && currentUser.isAdmin === true ) { %>
                   <li class="nav-item boarder-top-bottom nav-link-spacing">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="/OurHomes/new">New Listing</a>
                       <a class="dropdown-item" href="/Admin/OurHomes">Admin View</a>
+                    <!-- This is to add gallery objects to the database ie photo gallery page  <a class="dropdown-item" href="/Admin/newgallery">New Gallery</a> -->
                       <a class="dropdown-item" href="/Admin/Logout">Logout</a>
                     </div>
                   </li>

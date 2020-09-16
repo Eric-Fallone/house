@@ -1,6 +1,7 @@
 var express = require("express");
 var router  = express.Router();
 var House = require("../models/house");
+var Gallery = require("../models/gallery");
 var middleware = require("../middleware");
 var { isLoggedIn, isAdmin} = middleware;
 
@@ -33,7 +34,15 @@ router.get("/:address", function(req, res){
       console.log(err);
     } else{
       res.locals.page="OurHomes";
-      res.render("house/index",{listingInfo: houseObject});
+
+      Gallery.findOne({catagory: houseObject.address_street}).populate({path:"galleryposts", options:{ sort:{index:1}}})
+      .exec( function(err,GalleryPage){
+        if(err){
+          console.log(err);
+        } else{
+          res.render("house/index",{listingInfo:houseObject, PhotoGallery:GalleryPage });
+        }
+      });
     }
   });
 });
@@ -95,7 +104,16 @@ router.post("/", isLoggedIn, isAdmin, function(req, res){
         console.log(err);
         res.redirect('back')
       }else{
-        res.redirect('/OurHomes/'+newlycreated.address_street);
+
+        var newGallery = {catagory: req.body.address_street, description: "Unused", author: author}
+
+        Gallery.create(newGallery, function(err, newlycreated) {
+          if(err){
+            console.log(err);
+          }else{
+            res.redirect('/OurHomes/'+newlycreated.address_street);
+          }
+        });
       }
     });
 

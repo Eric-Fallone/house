@@ -11,6 +11,8 @@ var express     = require("express"),
     methodOverride = require("method-override"),
     User        = require("./models/user"),
     House        = require("./models/house"),
+    Gallery        = require("./models/gallery"),
+    GalleryPost        = require("./models/galleryPost"),
     normalizePort=require('normalize-port'),
     fileUpload = require('express-fileupload');
 
@@ -26,7 +28,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGOOSE_URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify:false
 }).then(()=> {
   console.log('Connecected to DB');
 }).catch(err => {

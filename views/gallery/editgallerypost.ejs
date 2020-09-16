@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class = "container">
+  <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h1 class="">Edit</h1>
+
+        <form action="/admin/<%=catagory%>/<%=post.title%>/edit?_method=PUT" method="POST">
+          <h1 class="" name ="title">Edit: <%=post.title%>:</h1>
+
+
+          <div class="form-group">
+              <label for="quote">Quote:(Unused)</label>
+              <textarea class="form-control" id="quote" rows="2" name ="quote" ><%=post.quote%></textarea>
+          </div>
+
+          <div class="form-group">
+              <label for="text">Text (Unused) </label>
+              <textarea class="form-control" id="text" rows="5" name ="blogText"><%=post.text%></textarea>
+          </div>
+
+          <div class="form-group">
+              <label for="loc">Current Index: <%=post.index%><br />Max Index: <%=maxLoc%> </label>
+              <input type="number" style= "max-width:60px;" class="form-control" id="loc" name ="loc" value="<%=post.index%>" min="1" max="<%=maxLoc%>"></input>
+          </div>
+
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>

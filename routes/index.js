@@ -1,5 +1,6 @@
 var express = require("express");
 var House = require("../models/house");
+var Gallery = require("../models/gallery");
 var router  = express.Router();
 var emailer = require("../public/scripts/email.js")
 
@@ -24,7 +25,15 @@ router.get("/About", function(req,res){
 
 router.get("/Gallery", function(req,res){
   res.locals.page="Gallery";
-  res.render("Gallery");
+
+  Gallery.findOne({catagory: "PhotoGalleryPage"}).populate({path:"galleryposts", options:{ sort:{index:1}}})
+  .exec( function(err,GalleryPage){
+    if(err){
+      console.log(err);
+    } else{
+      res.render("Gallery",{PhotoGalleryPage:GalleryPage});
+    }
+  });
 });
 
 router.get("/Contact", function(req,res){

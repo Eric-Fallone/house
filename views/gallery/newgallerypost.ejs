@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class = "container">
+  <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h1 style="text-align: center">New <%=catagory%> Image </h1>
+
+        <form action="/admin/<%=catagory%>" method="POST" encType="multipart/form-data">
+
+          <div class="form-group ">
+              <label for="title">Title (required)</label>
+              <input class="form-control" id="title" type="text" placeholder="Title" name ="title">
+          </div>
+
+          <div class="form-group">
+              <label for="gallery_pic">Gallery Picture</label>
+              <input type="file" name="gallery_pic" />
+          </div>
+
+          <div class="form-group">
+              <label for="quote">Tagline(unused)</label>
+              <textarea class="form-control" id="quote" rows="2" name ="quote"></textarea>
+          </div>
+
+          <div class="form-group">
+              <label for="text">Text(unused)</label>
+              <textarea class="form-control" id="text" rows="5" name ="blogText" ></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+      </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

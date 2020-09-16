@@ -1,0 +1,59 @@
+<section class="page-section portfolio" id="portfolio">
+  <div class="container">
+        <!-- Portfolio Grid Item-->
+        <div class="row">
+          <% for(var i = 0; i < AllGalleryPosts.galleryposts.length ; i++) { %>
+            <!-- Portfolio Item -->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal<%= i %><%= AllGalleryPosts.catagory.replace(/\s/g, '') %>">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                    </div>
+                    <img class="img-fluid" src="/photos/Pictures/gallery<%=AllGalleryPosts.galleryposts[i].title %>.jpg" alt="<%=AllGalleryPosts.galleryposts[i].title %>" />
+                </div>
+            </div>
+          <% }; %>
+        </div>
+        <!-- Admin Buttons -->
+        <% if( currentUser && currentUser.isAdmin ===true ) { %>
+        <div class="text-center mt-3 mb-5">
+          <a class="btn btn-primary text-center" href ="/admin/<%= AllGalleryPosts.catagory %>/new">Add Post</a>
+        </div>
+        <% } %>
+    </div>
+</section>
+
+<!-- Portfolio Modals-->
+<% for(var i = 0; i < AllGalleryPosts.galleryposts.length ; i++) { %>
+  <!-- Portfolio Item-->
+<div class="portfolio-modal modal fade" id="portfolioModal<%= i %><%= AllGalleryPosts.catagory.replace(/\s/g, '') %>" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Labe<%= i %><%= AllGalleryPosts.catagory.replace(/\s/g, '') %>" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <button class="close " type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <div class="modal-body text-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <!-- Portfolio Modal - Image-->
+                            <img class="img-fluid rounded mb-5" src="/photos/Pictures/gallery<%=AllGalleryPosts.galleryposts[i].title %>.jpg" alt="" />
+                            <!-- Admin Buttons -->
+                            <% if( currentUser && currentUser.isAdmin === true ) { %>
+                              <div class="pull-right">
+                                <a class="btn btn-warning" href="/admin/<%= AllGalleryPosts.catagory %>/<%= AllGalleryPosts.galleryposts[i].title %>/edit">Edit</a>
+                                <form class="delete-form" action="/admin/<%= AllGalleryPosts.galleryposts[i].title %>?_method=DELETE" method="POST">
+                                  <button class="btn btn-xs btn-danger">DELETE</button>
+                                </form>
+                              </div>
+                            <% } %>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% }; %>

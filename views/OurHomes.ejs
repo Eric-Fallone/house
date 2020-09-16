@@ -2,7 +2,7 @@
 
 <div class="container">
 
-  <% for(var i=0; i<allHouses.length;i++){ %>
+  <% for(var i=allHouses.length - 1 ; i > 0 ; i--){ %>
   <div class="row mt-4 mb-4 about-div">
     <div class="col-7">
       <a href="/OurHomes/<%=allHouses[i].address_street%>">
@@ -14,24 +14,20 @@
         <div class="row">
           <div class="col-12">
             <p class="address-town nunito mb-0">
-                <% if (allHouses[i].address_street) { %>
-                    <%=allHouses[i].address_street%>
-                  <% } else { %>
-
-                  <% } %></p>
-          </div>
-          <div class="col-12">
-            <p class="address-street nunito pt-0 mb-0">
-              <% if (allHouses[i].address_town) { %>
+              <% if (allHouses[i].address_street) { %>
+                <% if(allHouses[i].onMarket === "Sold" || allHouses[i].onMarket === "under contract"){ %>
                   <%=allHouses[i].address_town%>
+                  <% } else { %>
+                    <%=allHouses[i].address_street%> <%=allHouses[i].address_town%>
+                <% } %>
                 <% } else { %>
-
+                  No Street address found
                 <% } %></p>
             </p>
           </div>
           <div class="col-12">
             <p class="cost nunito mb-0">
-              <% if (allHouses[i].onMarket && allHouses[i].price) { %>
+              <% if (allHouses[i].onMarket) { %>
                 <% if(allHouses[i].onMarket === "Currently for Sale"){ %>
                     OFFERED AT <%=allHouses[i].price%>
                 <% } %>
