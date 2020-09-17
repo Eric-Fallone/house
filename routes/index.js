@@ -7,7 +7,7 @@ var emailer = require("../public/scripts/email.js")
 router.get("/", function(req,res){
   res.locals.page="Landing";
 
-  House.find({isShowing:true},function(err, houseObject){
+  House.find({isShowingMainPage:true},function(err, houseObject){
     if(err){
       console.log(err);
     } else{

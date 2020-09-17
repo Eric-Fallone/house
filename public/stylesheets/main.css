@@ -8,10 +8,6 @@
     display: block;
   }
 
-  .footer-text{
-    font-size: 5px;
-    font-weight: 500;
-  }
   /*    fonts          */
 
   .barlow{
@@ -59,10 +55,6 @@
     border-bottom: 2px solid rgba(75, 75, 75, 1);
   }
 
-  .footer-text{
-    font-size: 14px;
-    font-weight: 500;
-  }
   /*    fonts          */
 
   .barlow{
@@ -112,9 +104,17 @@ html,body{
 
 #wrap{
   min-height: 100%;
-  margin-bottom: -100px;
-  padding-bottom: 100px;
+  margin-bottom: -85px;
+
   background-color: #e5e8e2;
+}
+
+.contact-image{
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background-image: url('/photos/Pictures/5sd/5sd front.jpg');
+  background-size: cover;
 }
 
 .bodycontainer{
@@ -309,14 +309,26 @@ box-shadow: 0px 10px 6px -6px #888;
   background-color: rgb(75,75,75,1);
 /*  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;*/
 }
-.footer-spacing{
-  padding-bottom: 5px;
+.footer-style > .container  {
+  height: 100%
+/*  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;*/
+}
+.footer-spacing, .push{
+  /*padding-bottom: 5px;*/
+  height:85px;
+}
+.footer-text{
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color:#e5e8e2;
 }
 
-.footer-div{
-  margin: 0;
-  padding: 0;
-  height: 40px;
+.contact-background{
+  position: relative;
+  /*contact-background color #e5e8e2 converted to rgb for oppacity */
+  background-color: rgb(229, 232, 226,.5);
+  width: 500px !important;
 }
 
 /*    footer          */

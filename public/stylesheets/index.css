@@ -54,7 +54,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure,  header, hgroup, main, nav, section {
   display: block;
 }
 
@@ -10177,7 +10177,7 @@ h3 {
   left: 0;
   transition: all 0.2s ease-in-out;
   opacity: 0;
-  background-color: rgba(26, 188, 156, 0.9);
+  background-color: rgba(75, 75, 75, .8);
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
@@ -10203,7 +10203,7 @@ h3 {
   top: 1rem;
   font-size: 3rem;
   line-height: 3rem;
-  color: #1abc9c;
+  rgba(75, 75, 75, 1);
   opacity: 1;
 }
 
@@ -10252,14 +10252,14 @@ h3 {
 form .row:first-child .floating-label-form-group {
   border-top: 1px solid #e9ecef;
 }
-
+/*
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
   background-color: #5F0F40;
   color: #fff;
 }
-
+*/
 .copyright {
   background-color: #0F4C5C;
 }

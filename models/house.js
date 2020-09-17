@@ -7,6 +7,7 @@ var HouseSchema = new mongoose.Schema({
     price: String,
     onMarket: String, //  1  Currently for Sale   2  About to go to market   3 Sold 4 under contract
     isShowing: Boolean,
+    isShowingMainPage: Boolean,
     description: String,
     createdDate: { type: Date, default: Date.now },
     author: {

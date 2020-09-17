@@ -93,6 +93,7 @@ router.post("/", isLoggedIn, isAdmin, function(req, res){
     price: req.body.price,
     onMarket: req.body.onMarket,
     isShowing: req.body.isShowing,
+    isShowingMainPage: req.body.isShowingMainPage,
     description: req.body.description,
     carousel: data,
     author: author
@@ -152,7 +153,8 @@ router.put("/:address/edit",isLoggedIn, isAdmin, function(req, res){
           price: req.body.price,
           onMarket: req.body.onMarket,
           isShowing: req.body.isShowing,
-          description: req.body.description,
+          isShowingMainPage: req.body.isShowingMainPage,
+          description: req.body.description
          };
       }
     });
@@ -162,6 +164,7 @@ router.put("/:address/edit",isLoggedIn, isAdmin, function(req, res){
       price: req.body.price,
       onMarket: req.body.onMarket,
       isShowing: req.body.isShowing,
+      isShowingMainPage: req.body.isShowingMainPage,
       description: req.body.description
     };
   }
@@ -188,9 +191,18 @@ router.delete("/:address",isLoggedIn, isAdmin, function(req, res){
             res.redirect('/');
         } else {
             req.flash('success', 'Listing deleted!');
-            res.redirect('/');
+
+            Gallery.deleteOne({catagory:req.params.address},function(err) {
+                  if(err) {
+                      req.flash('error', err.message);
+                      res.redirect('/');
+                  } else {
+                      req.flash('success', ' Gallery for Listing deleted!');
+                      res.redirect('/');
+                  }
+                });
         }
-      })
+      });
 });
 //
 
