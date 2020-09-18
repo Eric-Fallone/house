@@ -2,14 +2,14 @@
 <% if (listingInfo) { %>
 <div class="container">
   <div class="row">
-    <div class="col-7">
+    <div class="col-12">
       <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=listingInfo.address_street%>.jpg" alt="Image not found">
     </div>
-    <div class="col-5">
+    <div class="col-12">
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <p class="address-town nunito mb-0">
+          <div class="col-6">
+            <p class="address-town nunito p-2 mb-0">
                 <% if (listingInfo.address_street) { %>
                   <% if(listingInfo.onMarket === "Sold" || listingInfo.onMarket === "under contract"){ %>
                     <%=listingInfo.address_town%>
@@ -21,8 +21,8 @@
                   <% } %></p>
           </div>
 
-          <div class="col-12">
-            <p class="cost nunito mb-0">
+          <div class="col-6">
+            <p class="cost nunito p-2 mb-0">
               <% if (listingInfo.onMarket ) { %>
                 <% if(listingInfo.onMarket === "Currently for Sale"){ %>
                     OFFERED AT <%=listingInfo.price%>
@@ -52,15 +52,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-12 mt-3 shown-mobile">
-      <p class="nunito">
-        <% if (listingInfo.description) { %>
-          <%=listingInfo.description%>
-        <% } else { %>
-          No description found
-        <% } %>
-      </p>
     </div>
   </div>
 

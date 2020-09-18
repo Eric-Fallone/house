@@ -4,19 +4,17 @@
 
   <% for(var i = 0 ; i < allHouses.length ; i++ ){ %>
 
-  <div class="mt-4 mb-4 about-div  <% if ( i % 2 == 0) { %><% } else { %>backgroundodd<% } %>">
+  <div class="about-div  <% if ( i % 2 == 0) { %><% } else { %>backgroundodd<% } %>">
     <div class="container">
       <div class="row">
         <div class="col-6">
-          <a href="/OurHomes/<%=allHouses[i].address_street%>">
             <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="Click for listing">
-          </a>
         </div>
         <div class="col-6">
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <p class="address-town nunito mb-0">
+                <p class="address-town nunito  mb-0">
                   <% if (allHouses[i].address_street) { %>
                     <% if(allHouses[i].onMarket === "Sold" || allHouses[i].onMarket === "under contract"){ %>
                       <%=allHouses[i].address_town%>
@@ -48,7 +46,7 @@
                   <% } %>
                 </p>
               </div>
-              <div class="col-12 hidden-mobile">
+              <div class="col-12">
                 <p class="nunito">
                   <% if (allHouses[i].blerb) { %>
                     <%=allHouses[i].blerb%>
@@ -56,6 +54,11 @@
 
                   <% } %>
                 </p>
+              </div>
+              <div class="col-12">
+                <a href="/OurHomes/<%=allHouses[i].address_street%>">
+                  <button type="button" class="btn btn-info">More Info</button>
+                </a>
               </div>
             </div>
           </div>

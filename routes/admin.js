@@ -65,6 +65,7 @@ router.get("/OurHomes", isAdmin, function(req,res){
 
 //new gallery
 router.get("/newgallery", isLoggedIn, isAdmin, function(req,res){
+  res.locals.page="newgallery";
   res.render("gallery/newgallery");
 });
 
@@ -87,12 +88,9 @@ router.post("/newgallery", isLoggedIn, isAdmin, function(req, res){
   });
 });
 
-//new gallery post
-router.get("/newgallery", isLoggedIn, isAdmin, function(req,res){
-  res.render("gallery/newgallerypost");
-});
 //new
 router.get("/:catagory/new",isLoggedIn, isAdmin, function(req,res){
+  res.locals.page="newpost";
   res.render("gallery/newgallerypost",{catagory: req.params.catagory});
 });
 //create gallery post
