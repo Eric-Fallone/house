@@ -1,12 +1,20 @@
 <% include partials/header %>
 
+
         <div class="contact-background container">
           <div class="row justify-content-center">
+
             <div class="col-sm-12">
               <div class="container">
                 <div class="row about-div">
                   <div class="col-12 pt-3 text-center nunito">
+                    Contact Us:
+                  </div>
+                  <div class="col-12 pt-3 text-center nunito">
                     (908) 866-6628
+                  </div>
+                  <div class="col-12 text-center nunito">
+                    info@fallonehomes.com
                   </div>
                   <div class="col-12 text-center nunito">
                     1131 Cambridge Lane,
@@ -14,42 +22,45 @@
                   <div class="col-12 text-center nunito">
                     Bridgewater, NJ 08807
                   </div>
-                  <div class="col-12 text-center nunito">
-                    info@fallonehomes.com
-                  </div>
                 </div>
               </div>
           </div>
+
             <div class="col-sm-12 ">
               <form action="/Contact" method="post">
-              <div class="container">
+
                 <div class="row justify-content-center">
                     <!--  Name -->
-                    <div class="col-12 nunito p-1 pt-2">
+                    <div class="col-12 text-center nunito">
+                      <p>Send us an email</p>
+                    </div>
+                    <div class="col-12 nunito pt-2">
                       <input class="form-control" id="first" type="text" placeholder="Name *" name ="name">
                     </div>
                     <!--Email-->
-                    <div class="col-12 nunito p-1 pt-2">
+                    <div class="col-12 nunito pt-2">
                       <input class="form-control" id="last" type="text" placeholder="Email *" name ="email">
                     </div>
                     <!-- subject  -->
-                    <div class="col-12 nunito p-1 pt-2">
+                    <div class="col-12 nunito pt-2">
                       <input class="form-control" id="subject" type="text" placeholder="Subject" name ="subject">
                     </div>
 
                     <!-- Email msg -->
 
-                    <div class="col-12 nunito p-1 pt-2">
+                    <div class="col-12 nunito pt-2">
                       <textarea class="form-control" id="emailmsg" rows="8" placeholder="Message" name ="emailmsg"></textarea>
                     </div>
                     <!-- button-->
-                    <div class="col-6 nunito p-1 pt-2 text-center">
+                    <div class="col-4 nunito pt-2 pb-2 text-center">
                       <button type="submit" class="btn button-send ">Send</button>
                     </div>
                 </div>
               </form>
                     </div>
               </div>
+
+
           </div>
 
 <% include partials/footer %>

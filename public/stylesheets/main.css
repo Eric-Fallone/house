@@ -10,6 +10,11 @@
 
   /*    fonts          */
 
+  .black_text_white_outline{
+    -webkit-text-stroke-width:1px;
+    -webkit-text-stroke-color:white;
+  }
+
   .barlow{
     font-family: 'Barlow', sans-serif;
     color: #4B4B4B;
@@ -110,16 +115,15 @@ html,body{
 }
 
 .contact-image{
-  position: absolute;
-  width: 100%;
-  height: 600px;
+  height: 100vh-200px;
   background-image: url('/photos/Pictures/5sd/5sd front.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bodycontainer{
-  max-width: 980px;
-  padding-top: 10px;
+  /*max-width: 980px;*/
 }
 
 .nav-subbar{
@@ -325,10 +329,11 @@ box-shadow: 0px 10px 6px -6px #888;
 }
 
 .contact-background{
+  margin-top: 50px;
   position: relative;
+  max-width: 600px !important;
   /*contact-background color #e5e8e2 converted to rgb for oppacity */
-  background-color: rgb(229, 232, 226,.5);
-  width: 500px !important;
+  background-color: rgb(229, 232, 226,.9);
 }
 
 /*    footer          */

@@ -24,7 +24,7 @@
   </head>
   <body>
     <!--  Nav bar for follone house logo centered -->
-    <div class="" id="wrap">
+    <div class="<% if (page == "Contact") { %>contact-image<% } %>" id="wrap">
 
       <!--  Nav bar for links-->
       <nav class="navbar navbar-expand-md navbar-light bg-faded nav-subbar nav-link-holder">
@@ -110,16 +110,19 @@
               </ul>
           </div>
       </nav>
-      <% if (page == "Contact") { %>
-          <div class="contact-image">
-          </div>
-      <% } %>
-      <div class="container bodycontainer">
-        <div class="text-center flashError">
+    <!--  <% if (page == "Contact") { %>
+        <div class="contact-image">
+        </div>
+      <% } %> -->
+      <div class="container bodycontainer ">
+
            <% if(error && error.length > 0) { %>
-             <div class="flash danger email-sender" ><p><%=error %></p></div>
+             <div class="text-center flashError">
+               <div class="flash danger email-sender" ><p><%=error %></p></div>
+             </div>
            <% } %>
            <% if(success && success.length > 0) { %>
-             <div class="flash success email-sender" ><p><%= success %></p></div>
+             <div class="text-center flashError">
+               <div class="flash success email-sender" ><p><%= success %></p></div>
+             </div>
            <% } %>
-        </div>
