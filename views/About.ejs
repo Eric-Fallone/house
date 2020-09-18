@@ -1,5 +1,30 @@
 <% include partials/header %>
 
-Marcus is my pupper!
+<div class="container">
+  <div class="row justify-content-center">
+    <!-- About us image -->
+    <div class="col-12">
+        <img src="/photos/Pictures/5sd/5sd front.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+    <!-- Paragraph one  -->
+    <div class="col-12">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec et odio pellentesque diam volutpat commodo sed. Tortor dignissim convallis aenean et tortor at risus. Dolor sit amet consectetur adipiscing elit ut. Felis donec et odio pellentesque diam volutpat commodo sed egestas. Leo vel fringilla est ullamcorper eget nulla facilisi etiam. Lorem ipsum dolor sit amet consectetur adipiscing elit. Urna duis convallis convallis tellus id interdum velit. Ante in nibh mauris cursus mattis molestie a iaculis at. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue. Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Pretium aenean pharetra magna ac placerat. Eget nunc scelerisque viverra mauris in aliquam sem fringilla ut. Urna duis convallis convallis tellus. Habitant morbi tristique senectus et. Porttitor leo a diam sollicitudin tempor id eu nisl nunc. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus.</p>
+    </div>
+    <!-- Paragraph two -->
+    <div class="col-12">
+      <p>Pulvinar mattis nunc sed blandit. Scelerisque in dictum non consectetur a. Scelerisque varius morbi enim nunc faucibus. Rhoncus urna neque viverra justo nec ultrices. Ipsum dolor sit amet consectetur adipiscing elit duis tristique. Et odio pellentesque diam volutpat. Mattis aliquam faucibus purus in massa tempor nec feugiat. Neque convallis a cras semper auctor neque vitae tempus. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Justo eget magna fermentum iaculis eu non. Sodales ut eu sem integer vitae justo eget magna fermentum. Pretium nibh ipsum consequat nisl.</p>
+    </div>
+    <!-- Google maps -->
+    <div class="col-12">
+      <iframe
+        width="100%"
+        height="450"
+        frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?key=<%=process.env.GOOGLE_MAPS_KEY%>
+          &q=Five+Guys+NJ,Dominos+NJ" >
+      </iframe>
+    </div>
+  </div>
+</div>
 
 <% include partials/footer %>
