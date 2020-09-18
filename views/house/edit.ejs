@@ -74,6 +74,10 @@
       </label>
     </div>
 
+    <div class="form-group">
+        <label for="blerb">Our Homes Blerb</label>
+        <textarea class="form-control" id="blerb" rows="3" name ="blerb" ><%=listingInfo.blerb%></textarea>
+    </div>
 
     <div class="form-group">
         <label for="text">Description</label>
@@ -84,25 +88,11 @@
         <label for="thumb_pic">Thumbnail Picture</label>
         <input type="file" name="thumb_pic" />
     </div>
-<!--
-    <label>Carousel Images this isnt used atm</label>
 
-    <div class="form-row">
-      <div class="col text-right">
-        <label>Pic 1:</label>
-      </div>
-      <div class="col-6">
-        <input type="text" class="form-control" placeholder="Title" name="carousel[1][url]">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Title" name="carousel[1][title]">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="SubText" name="carousel[1][subText]">
-      </div>
+    <div class="form-group">
+        <label for="loc">Current Index: <%=listingInfo.index%><br />Max Index: <%=maxLoc%> </label>
+        <input type="number" style= "max-width:60px;" class="form-control" id="loc" name ="loc" value="<%=listingInfo.index%>" min="1" max="<%=maxLoc%>"></input>
     </div>
--->
-
 
 
     <button type="submit" class="btn btn-primary">Submit</button>

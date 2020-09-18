@@ -2,72 +2,68 @@
 
 <div class="">
 
-  <% for(var i=allHouses.length - 1 ; i > 0 ; i--){ %>
-  <div class="row mt-4 mb-4 about-div">
-    <div class="col-7">
-      <a href="/OurHomes/<%=allHouses[i].address_street%>">
-        <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="Click for listing">
-      </a>
-    </div>
-    <div class="col-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <p class="address-town nunito mb-0">
-              <% if (allHouses[i].address_street) { %>
-                <% if(allHouses[i].onMarket === "Sold" || allHouses[i].onMarket === "under contract"){ %>
-                  <%=allHouses[i].address_town%>
-                  <% } else { %>
-                    <%=allHouses[i].address_street%> <%=allHouses[i].address_town%>
-                <% } %>
-                <% } else { %>
-                  No Street address found
-                <% } %></p>
-            </p>
-          </div>
-          <div class="col-12">
-            <p class="cost nunito mb-0">
-              <% if (allHouses[i].onMarket) { %>
-                <% if(allHouses[i].onMarket === "Currently for Sale"){ %>
-                    OFFERED AT <%=allHouses[i].price%>
-                <% } %>
-                <% if(allHouses[i].onMarket === "About to go to market"){ %>
-                    COMING SOON
-                <% } %>
-                <% if(allHouses[i].onMarket === "under contract"){ %>
-                    UNDER CONTRACT
-                <% } %>
-                <% if(allHouses[i].onMarket === "Sold"){ %>
-                    SOLD
-                <% } %>
-              <% } else { %>
-                No market status
-              <% } %>
-            </p>
-          </div>
-          <div class="col-12 hidden-mobile">
-            <p class="nunito">
-              <% if (allHouses[i].description) { %>
-                <%=allHouses[i].description%>
-              <% } else { %>
+  <% for(var i = 0 ; i < allHouses.length ; i++ ){ %>
 
-              <% } %>
-            </p>
+  <div class="mt-4 mb-4 about-div  <% if ( i % 2 == 0) { %><% } else { %>backgroundodd<% } %>">
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <a href="/OurHomes/<%=allHouses[i].address_street%>">
+            <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="Click for listing">
+          </a>
+        </div>
+        <div class="col-6">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <p class="address-town nunito mb-0">
+                  <% if (allHouses[i].address_street) { %>
+                    <% if(allHouses[i].onMarket === "Sold" || allHouses[i].onMarket === "under contract"){ %>
+                      <%=allHouses[i].address_town%>
+                      <% } else { %>
+                        <%=allHouses[i].address_street%> <%=allHouses[i].address_town%>
+                    <% } %>
+                    <% } else { %>
+                      No Street address found
+                    <% } %>
+                </p>
+              </div>
+              <div class="col-12">
+                <p class="cost nunito mb-0">
+                  <% if (allHouses[i].onMarket) { %>
+                    <% if(allHouses[i].onMarket === "Currently for Sale"){ %>
+                        OFFERED AT <%=allHouses[i].price%>
+                    <% } %>
+                    <% if(allHouses[i].onMarket === "About to go to market"){ %>
+                        COMING SOON
+                    <% } %>
+                    <% if(allHouses[i].onMarket === "under contract"){ %>
+                        UNDER CONTRACT
+                    <% } %>
+                    <% if(allHouses[i].onMarket === "Sold"){ %>
+                        SOLD
+                    <% } %>
+                  <% } else { %>
+                    No market status
+                  <% } %>
+                </p>
+              </div>
+              <div class="col-12 hidden-mobile">
+                <p class="nunito">
+                  <% if (allHouses[i].blerb) { %>
+                    <%=allHouses[i].blerb%>
+                  <% } else { %>
+
+                  <% } %>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-12 mt-3 shown-mobile">
-      <p class="nunito">
-        <% if (allHouses[i].description) { %>
-          <%=allHouses[i].description%>
-        <% } else { %>
-
-        <% } %>
-      </p>
-    </div>
   </div>
-  <% } %>
+<% } %>
 </div>
 
 <% include partials/footer %>

@@ -1,6 +1,7 @@
 var mongoose = require("mongoose");
 
 var HouseSchema = new mongoose.Schema({
+    index: Number, 
     address_street: { type: String, unique:true, require:true},
     address_town: String,
     picture_main: String,
@@ -8,6 +9,7 @@ var HouseSchema = new mongoose.Schema({
     onMarket: String, //  1  Currently for Sale   2  About to go to market   3 Sold 4 under contract
     isShowing: Boolean,
     isShowingMainPage: Boolean,
+    blerb: String,
     description: String,
     createdDate: { type: Date, default: Date.now },
     author: {

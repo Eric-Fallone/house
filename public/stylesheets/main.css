@@ -1,3 +1,46 @@
+.backgroundodd{
+  background-color: rgb(255,255,255);
+}
+.wrap_backgroundcolor{
+  background-color: #e5e8e2;
+}
+
+.nav-subbar{
+  background-color: rgb(255,255,255);
+  /*box-shadow: 0 8px 6px -6px #888;*/
+}
+.nav-active{
+  background-color:rgba(75, 75, 75, 1);
+}
+
+/*    footer          */
+.footer-style{
+  background-color: rgb(75,75,75,1);
+}
+
+.contact-background{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  max-width: 400px !important;
+  /*contact-background color #e5e8e2 converted to rgb for oppacity */
+  background-color: rgb(229, 232, 226,.9);
+}
+
+/*    footer          */
+
+input[type="text"], #emailmsg {
+  background-color: rgba(226, 232, 232, 1) ;
+  border:1px solid rgba(133, 136, 131, 1);
+}
+
+.button-send{
+  width: 100%;
+  color: white !important;
+  background-color: rgba(75, 75, 75, 1) !important;
+  border:1px solid rgba(133, 136, 131, 1) !important;
+}
+
 @media only screen and (max-width: 768px) {
 
   .hidden-mobile{
@@ -110,8 +153,6 @@ html,body{
 #wrap{
   min-height: 100%;
   margin-bottom: -85px;
-
-  background-color: #e5e8e2;
 }
 
 .contact-image{
@@ -124,11 +165,6 @@ html,body{
 
 .bodycontainer{
   /*max-width: 980px;*/
-}
-
-.nav-subbar{
-  background-color: rgb(255,255,255);
-  /*box-shadow: 0 8px 6px -6px #888;*/
 }
 
 .nav-img{          /*NOT USED??? */
@@ -150,9 +186,7 @@ html,body{
   height: 50%;
 }
 
-.nav-active{
-  background-color:rgba(75, 75, 75, 1);
-}
+
 
 .nav-active > a{
   color: white !important;
@@ -300,19 +334,8 @@ box-shadow: 0px 10px 6px -6px #888;
 }
 
 
-/*    email sender    */
-.email-sender{
-  padding-top: 5px;
-  background-color: rgba(235, 235, 235, 1);
-  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;
-}
-/*    email sender    */
 
-/*    footer          */
-.footer-style{
-  background-color: rgb(75,75,75,1);
-/*  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;*/
-}
+
 .footer-style > .container  {
   height: 100%
 /*  box-shadow: 0px 8px 6px -6px #888, 0px -8px 6px -6px #888;*/
@@ -328,27 +351,6 @@ box-shadow: 0px 10px 6px -6px #888;
   color:#e5e8e2;
 }
 
-.contact-background{
-  margin-top: 50px;
-  position: relative;
-  max-width: 600px !important;
-  /*contact-background color #e5e8e2 converted to rgb for oppacity */
-  background-color: rgb(229, 232, 226,.9);
-}
-
-/*    footer          */
-
-input[type="text"], #emailmsg {
-  background-color: rgba(226, 232, 232, 1) ;
-  border:1px solid rgba(133, 136, 131, 1);
-}
-
-.button-send{
-  width: 100%;
-  color: white !important;
-  background-color: rgba(75, 75, 75, 1) !important;
-  border:1px solid rgba(133, 136, 131, 1) !important;
-}
 
 .about-div{
 /*  background-color: rgba(235, 235, 235, 1);*/
