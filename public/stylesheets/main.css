@@ -27,6 +27,18 @@
   background-color: rgb(229, 232, 226,.9);
 }
 
+
+
+.single-view-image{
+  max-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-fal-image{
+  max-height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*    footer          */
 
 input[type="text"], #emailmsg {
@@ -270,6 +282,8 @@ html,body{
 
 .carousel-holder{
   min-height: 300px;
+  max-height:calc( 100vh - 220px );
+  max-width: calc( 100vh - 220px );
 }
 
 .carousel-indicators{

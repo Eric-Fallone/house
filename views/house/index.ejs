@@ -1,9 +1,9 @@
 <% include ../partials/header %>
 <% if (listingInfo) { %>
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <img class="d-block w-100 img-fluid list-img" src="/photos/Pictures/thumb<%=listingInfo.address_street%>.jpg" alt="Image not found">
+  <div class="row justify-content-center">
+    <div class="col-12 pt-3">
+      <img class="d-block h-100 img-fluid list-img single-view-image" src="/photos/Pictures/thumb<%=listingInfo.address_street%>.jpg" alt="Image not found">
     </div>
     <div class="col-12">
       <div class="container">
@@ -41,7 +41,8 @@
               <% } %>
             </p>
           </div>
-          <div class="col-12 hidden-mobile">
+
+          <div class="col-12">
             <p class="nunito">
               <% if (listingInfo.description) { %>
                 <%=listingInfo.description%>
@@ -50,13 +51,25 @@
               <% } %>
             </p>
           </div>
+          
+          <div class="col-12 pt-3">
+            <% if (listingInfo.onMarket ) { %>
+              <% if(listingInfo.onMarket === "Currently for Sale"){ %>
+                  <%- include('../partials/embededgooglemaps.ejs',{mapHeight:"250px",address:listingInfo.address_street+ listingInfo.address_town}); -%>
+              <% } %>
+              <% if(listingInfo.onMarket === "About to go to market"){ %>
+                  <%- include('../partials/embededgooglemaps.ejs',{mapHeight:"250px",address:listingInfo.address_street+ listingInfo.address_town}); -%>
+              <% } %>
+            <% } %>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
 
     <% if( currentUser && currentUser.isAdmin){ %>
-      <div class="pull-right">
+      <div class="">
         <a class="btn btn-warning mb-5" href="/OurHomes/<%= listingInfo.address_street  %>/edit">Edit</a>
         <form class="delete-form" action="/OurHomes/<%= listingInfo.address_street  %>?_method=DELETE" method="POST">
           <button class="btn btn-xs btn-danger">DELETE</button>

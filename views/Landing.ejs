@@ -9,47 +9,10 @@
         <div class="carousel-item <% if(i == 0) {%>active<%}%>">
           <div class=" overlay-helper about-div pl-2 pr-2">
             <!--Controls-->
-            <div class="carousel-overlay">
-              <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
               <!--/.Controls-->
-            <img class="d-block w-100 img-fluid carousel-holder" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
-            <div class="carousel-overlay">
-                <p class="overlay-left address-street carousel-text nunito"><%=allHouses[i].address_street%></p>
-            </div>
-          </div>
-          <div class="container p-0 carousel-info-label">
-            <div class="row">
-              <div class="col-6">
-                <p class="address-town nunito"><%=allHouses[i].address_town%></p>
-              </div>
-              <div class="col-6">
-                <p class="cost text-right nunito">
-                  <% if (allHouses[i].onMarket && allHouses[i].price) { %>
-                    <% if(allHouses[i].onMarket === "Currently for Sale"){ %>
-                        OFFERED AT <%=allHouses[i].price%>
-                    <% } %>
-                    <% if(allHouses[i].onMarket === "About to go to market"){ %>
-                        COMING SOON
-                    <% } %>
-                    <% if(allHouses[i].onMarket === "under contract"){ %>
-                        UNDER CONTRACT
-                    <% } %>
-                    <% if(allHouses[i].onMarket === "Sold"){ %>
-                        SOLD
-                    <% } %>
-                <% } else { %>
-                  No on market status
-                <% } %></p>
-              </div>
-            </div>
+            <a href="/OurHomes">
+              <img class="d-block w-100 img-fluid carousel-holder" src="/photos/Pictures/thumb<%=allHouses[i].address_street%>.jpg" alt="First slide">
+              </a>
           </div>
         </div>
         <% } %>

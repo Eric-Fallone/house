@@ -8,4 +8,7 @@ $(document).ready(function(){
   $('#carousel-thumb').on('slid.bs.carousel', function () {
     $(".carousel-info-label").show();
   })
+  $('.carousel').carousel({
+  interval: 6000
+})
 });
